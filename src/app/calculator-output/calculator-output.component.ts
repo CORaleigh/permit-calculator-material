@@ -3,12 +3,12 @@ import { DevelopmentCard } from '../development-card';
 import { Observable } from 'rxjs/Observable';
 import { FormControl } from '@angular/forms';  
 @Component({
-  selector: 'calcuator-output',
+  selector: 'calculator-output',
   inputs: ['cards', 'cardindex'],
-  templateUrl: './calcuator-output.component.html',
-  styleUrls: ['./calcuator-output.component.css']
+  templateUrl: './calculator-output.component.html',
+  styleUrls: ['./calculator-output.component.css']
 })
-export class CalcuatorOutputComponent implements OnInit, Input, DoCheck {
+export class CalculatorOutputComponent implements OnInit, Input, DoCheck {
 
   cards: Array<DevelopmentCard>;
   cardindex: number;
