@@ -1,3 +1,4 @@
+import { Calculations } from './calculations';
 export class DevelopmentCard {
     valuation: number;
     building: {group: string, values: Array<any>};
@@ -5,12 +6,6 @@ export class DevelopmentCard {
     constructScope: {name: string, percent: number};
     squareFeet: number;
     constructPercent: number;
-    buildingPermit: number;
-    planPermit:number;
-    elecPermit:number;
-    plumbPermit: number;
-    mechPermit: number;
-    totPermit: number;
-    perValuation: number;
+    calculations: Calculations;
     cardindex: number;
 }

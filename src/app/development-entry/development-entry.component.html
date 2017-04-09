@@ -1,9 +1,8 @@
-{{cardIndex}}
 <ng-container *ngFor="let card of cards; let i = index">
 <md-card *ngIf="i === cardIndex" class="example-card">
   <md-card-header>
     <div md-card-avatar class="example-header-image"></div>
-    <md-card-title>Card {{card.cardindex}}</md-card-title>
+    <md-card-title>Card {{card.cardindex + 1}}</md-card-title>
   </md-card-header>
   <md-card-content>
     <form>
@@ -16,14 +15,14 @@
       </md-select>
       </md-list-item>
       <md-list-item>
-      <md-select placeholder="Contruction Type" [(ngModel)]="card.construction" name="construction" (ngModelChange)="calcValuation(card.construction.value)">
+      <md-select placeholder="Contruction Type" [(ngModel)]="card.construction" name="construction" (ngModelChange)="calcValuation(card.construction.value, card)">
         <md-option *ngFor="let value of card.building.values" [value]="value">
           {{value.key}}
         </md-option>
       </md-select>
       </md-list-item>
       <md-list-item>
-      <md-select placeholder="Contruction Scope" [(ngModel)]="card.constructScope" name="scope" (ngModelChange)="calcValuation(card.construction.value)">
+      <md-select placeholder="Contruction Scope" [(ngModel)]="card.constructScope" name="scope" (ngModelChange)="calcValuation(card.construction.value, card)">
         <md-option *ngFor="let scope of scopes" [value]="scope" >
           {{scope.name}}
         </md-option>
@@ -31,19 +30,18 @@
       </md-list-item>
       <md-list-item>
       <md-input-container>
-        <input mdInput  maxlength="6" placeholder="Square Feet" [(ngModel)]="card.squareFeet" name="squareFeet" (ngModelChange)="calcValuation(card.construction.value)">
+        <input mdInput  maxlength="6" placeholder="Square Feet" [(ngModel)]="card.squareFeet" name="squareFeet" (ngModelChange)="calcValuation(card.construction.value, card)">
       </md-input-container> 
       </md-list-item>
-      </md-list>    
-      {{card.valuation}}  
+      </md-list>
     </form>
   </md-card-content>
   <md-card-actions style="margin:0 auto;">
     <button md-icon-button (click)="getPreviousCard()" *ngIf="cards.length > 1 && cardIndex > 0"><md-icon>keyboard_arrow_left</md-icon></button>
     <button md-button (click)="addCard()">ADD</button>
+    <button md-button (click)="removeCard(cards, i)" *ngIf="cards.length > 1" >REMOVE</button>    
     <button md-icon-button (click)="getNextCard()" *ngIf="cards.length > 1 && cardIndex != cards.length - 1"><md-icon>keyboard_arrow_right</md-icon></button>
   </md-card-actions>
 </md-card>
 </ng-container>
-<calculator-output [cards]="cards" [cardindex]="cardIndex"></calculator-output>
-{{cards | json}}
+<calculator-output [cards]="cards" [cardindex]="cardIndex" [calculations]="calculations"></calculator-output>
