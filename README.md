@@ -1,9 +1,9 @@
 # PermitCalculatorMaterial
 
 ## Build notes
-ng build --prod --bh /permit-calculator/
-zip -r dist.zip dist
-scp -i ~/code/sysadmin/bc-prod.pem dist.zip ubuntu@54.148.0.119:/tmp
+- ng build --prod --bh /permit-calculator/
+- zip -r dist.zip dist
+- scp -i ~/code/sysadmin/bc-prod.pem dist.zip ubuntu@54.148.0.119:/tmp
 
 ### On EC2 
 - unzip dist.zip 
