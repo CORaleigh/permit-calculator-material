@@ -1,5 +1,15 @@
 # PermitCalculatorMaterial
 
+## Build notes
+ng build --prod --bh /permit-calculator/
+zip -r dist.zip dist
+scp -i ~/code/sysadmin/bc-prod.pem dist.zip ubuntu@54.148.0.119:/tmp
+
+### On EC2 
+- unzip dist.zip 
+- cd dist
+- mv * /var/www/html/permit-calculator/
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.0.0-rc.1.
 
 ## Development server

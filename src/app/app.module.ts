@@ -10,6 +10,7 @@ import { DevelopmentEntryComponent } from './development-entry/development-entry
 import { CalculatorOutputComponent } from './calculator-output/calculator-output.component';
 import { DevelopmentEntryGroupComponent } from './development-entry-group/development-entry-group.component';
 import { KeysPipe } from './keys.pipe';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { KeysPipe } from './keys.pipe';
     FormsModule,
     HttpModule,
     MaterialModule,
-    CommonModule    
+    CommonModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
