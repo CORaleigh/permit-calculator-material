@@ -121,7 +121,6 @@ export class CalculatorOutputComponent implements OnInit, Input, DoCheck {
                 }
                 if (r.key === 'totPermit' && r.currentValue != r.previousValue && this.cardindex === card.cardindex) {
                  // this.sumTotPermit();;
-                 debugger;
                   this.calculationService.sumTotalPermit(this.cards).then(sum => this.calculations.totPermit = sum);
                 }                                                                    
               });

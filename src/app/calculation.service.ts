@@ -23,29 +23,33 @@ export class CalculationService {
     let costper = 0;
     let bldgPermit = 0;
     var BreakException = {};
-    if (card.building.group && card.construction.value) {
-      if (card.building.group === 'R-3 Residential, one- and two-family') {
-        card.calculations.bldgPermit = card.calculations.valuation * 0.00261692324298379 * 0.888226389234951;
-      } else {
-        let i = 0;
-        let tier = null;
-        for (; i < tiers.length; i++) {
-          tier = tiers[i];
-          if ((card.calculations.valuation > tier.min && card.calculations.valuation < tier.max) || !tier.max) {
-            if (i === 0) {
-              bldgPermit = (card.calculations.valuation/1000) * tier['costper'];
-            } else {
-              bldgPermit = (((card.calculations.valuation - tiers[i - 1]['max'])/1000) * tier['costper']) + tiers[i - 1]['cumulative'];
+    if (card.calculations.valuation) {
+      if (card.calculations.valuation > 0) { 
+        if (card.building.group && card.construction.value) {
+          if (card.building.group === 'R-3 Residential, one- and two-family') {
+            card.calculations.bldgPermit = card.calculations.valuation * 0.00261692324298379 * 0.888226389234951;
+          } else {
+            let i = 0;
+            let tier = null;
+            console.log(card.calculations.valuation);
+            for (; i < tiers.length; i++) {
+              tier = tiers[i];
+              if ((card.calculations.valuation > tier.min && card.calculations.valuation < tier.max) || !tier.max) {
+                if (i === 0) {
+                  bldgPermit = (card.calculations.valuation/1000) * tier['costper'];
+                } else {
+                  bldgPermit = (((card.calculations.valuation - tiers[i - 1]['max'])/1000) * tier['costper']) + tiers[i - 1]['cumulative'];
+                }
+                break;
+              }
             }
-            break;
           }
         }
-      }
+        if (bldgPermit < this.minFee) {
+          bldgPermit = this.minFee;
+        } 
+      } 
     }
-    if (bldgPermit < this.minFee) {
-      bldgPermit = this.minFee;
-    }    
-    
     return Promise.resolve(bldgPermit);
   } 
 
@@ -55,10 +59,11 @@ export class CalculationService {
     if (card.calculations.bldgPermit > 0) {
       percent = (card.building.group === 'R-3 Residential, one- and two-family') ? this.percents.plan.r3 : this.percents.plan.all;
       fee = card.calculations.bldgPermit * percent;
+      if (fee < this.minFee) {
+        fee = this.minFee;
+      }
     }
-    if (fee < this.minFee) {
-      fee = this.minFee;
-    }
+
     return Promise.resolve(fee);
   }
   calcElecPermit(card:DevelopmentCard): Promise<number> {
@@ -67,10 +72,11 @@ export class CalculationService {
     if (card.calculations.bldgPermit > 0) {
       percent = (card.building.group === 'R-3 Residential, one- and two-family') ? this.percents.elec.r3 : this.percents.elec.all;
       fee = card.calculations.bldgPermit * percent;
+      if (fee < this.minFee) {
+        fee = this.minFee;
+      }
     }
-    if (fee < this.minFee) {
-      fee = this.minFee;
-    }    
+
     return Promise.resolve(fee);
   }  
   calcPlumPermit(card:DevelopmentCard): Promise<number> {
@@ -79,10 +85,11 @@ export class CalculationService {
     if (card.calculations.bldgPermit > 0) {
       percent = (card.building.group === 'R-3 Residential, one- and two-family') ? this.percents.plum.r3 : this.percents.plum.all;
       fee = card.calculations.bldgPermit * percent;
+      if (fee < this.minFee) {
+        fee = this.minFee;
+      }   
     }
-    if (fee < this.minFee) {
-      fee = this.minFee;
-    }    
+ 
     return Promise.resolve(fee);
   }  
   calcMechPermit(card:DevelopmentCard): Promise<number> {
@@ -91,10 +98,11 @@ export class CalculationService {
     if (card.calculations.bldgPermit > 0) {
       percent = (card.building.group === 'R-3 Residential, one- and two-family') ? this.percents.mech.r3 : this.percents.mech.all;
       fee = card.calculations.bldgPermit * percent;
+      if (fee < this.minFee) {
+        fee = this.minFee;
+      }          
     }
-    if (fee < this.minFee) {
-      fee = this.minFee;
-    }    
+
     return Promise.resolve(fee);
   }     
   calcTotalPermit(card:DevelopmentCard): Promise<number> {

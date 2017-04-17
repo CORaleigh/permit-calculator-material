@@ -4,45 +4,66 @@
         <md-list>
             <md-list-item>
                 <h4 md-line>Valuation</h4>
-                <p md-line>
+                <p md-line *ngIf="calculations.valuation > 0">
                     {{calculations.valuation | currency:'USD':true:'1.0-0'}}
                 </p>
+                <p md-line *ngIf="calculations.valuation === 0">
+                    --
+                </p>                
             </md-list-item>
             <md-list-item>
                 <h4 md-line>Building Permit</h4>
-                <p md-line>
+                <p md-line *ngIf="calculations.valuation > 0">
                     {{calculations.bldgPermit | currency:'USD':true:'1.0-0'}}
                 </p>
+                <p md-line *ngIf="calculations.valuation === 0">
+                    --
+                </p>                   
             </md-list-item>
             <md-list-item>
                 <h4 md-line>Plan Review Fee</h4>
-                <p md-line>
+                <p md-line *ngIf="calculations.valuation > 0">
                     {{calculations.reviewFee | currency:'USD':true:'1.0-0'}}
                 </p>
+                <p md-line *ngIf="calculations.valuation === 0">
+                    --
+                </p>                   
             </md-list-item>
             <md-list-item>
                 <h4 md-line>Electrical Permit</h4>
-                <p md-line>
+                <p md-line *ngIf="calculations.valuation > 0">
                     {{calculations.elecPermit | currency:'USD':true:'1.0-0'}}
                 </p>
+                <p md-line *ngIf="calculations.valuation === 0">
+                    --
+                </p>                   
             </md-list-item>
             <md-list-item>
                 <h4 md-line>Plumbing Permit</h4>
-                <p md-line>
+                <p md-line *ngIf="calculations.valuation > 0">
                     {{calculations.plumPermit | currency:'USD':true:'1.0-0'}}
                 </p>
+                <p md-line *ngIf="calculations.valuation === 0">
+                    --
+                </p>                   
             </md-list-item>
             <md-list-item>
                 <h4 md-line>Mechanical Permit</h4>
-                <p md-line>
+                <p md-line *ngIf="calculations.valuation > 0">
                     {{calculations.mechPermit | currency:'USD':true:'1.0-0'}}
                 </p>
+                <p md-line *ngIf="calculations.valuation === 0">
+                    --
+                </p>                   
             </md-list-item>
             <md-list-item>
-                <h4 md-line>Total Permit</h4>
+                <h4 md-line *ngIf="calculations.valuation > 0">Total Permit</h4>
                 <p md-line>
                     {{calculations.totPermit | currency:'USD':true:'1.0-0'}}
                 </p>
+                <p md-line *ngIf="calculations.valuation === 0">
+                    --
+                </p>                   
             </md-list-item>
         </md-list>
     </md-card-content>
