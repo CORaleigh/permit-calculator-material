@@ -155,6 +155,21 @@ export class DevelopmentEntryComponent implements OnInit {
   getNextCard() {
     this.cardIndex += 1;
   }
+
+  buildingTypeChanged(card:DevelopmentCard) {
+    let key = card.construction.key;
+    console.log(card.construction);
+    let timeoutId = setTimeout(() => {  
+      card.building.values.forEach(function (type) {
+        if (type.key === card.construction.key) {
+          card.construction = type;
+        }
+      });
+      console.log(card.construction);
+      this.calcValuation(card.construction.value, card);
+    }, 100);
+
+  }
 }
 
 

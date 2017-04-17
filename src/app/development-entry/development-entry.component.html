@@ -6,7 +6,7 @@
         <md-card-content>
             <form>
               <p>
-                <md-select placeholder="Building Type" [(ngModel)]="card.building" name="building">
+                <md-select placeholder="Building Type" [(ngModel)]="card.building" name="building" (ngModelChange)="buildingTypeChanged(card)">
                     <md-option *ngFor="let building of iccbvd" [value]="building">
                         {{building.group}}
                     </md-option>
