@@ -57,8 +57,8 @@
                 </p>                   
             </md-list-item>
             <md-list-item>
-                <h4 md-line *ngIf="calculations.valuation > 0">Total Permit</h4>
-                <p md-line>
+                <h4 md-line>Total Permit</h4>
+                <p md-line *ngIf="calculations.valuation > 0">
                     {{calculations.totPermit | currency:'USD':true:'1.0-0'}}
                 </p>
                 <p md-line *ngIf="calculations.valuation === 0">
