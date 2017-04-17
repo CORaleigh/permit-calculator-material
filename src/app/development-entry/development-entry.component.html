@@ -28,7 +28,7 @@
               </p>
               <p>
                 <md-input-container>
-                    <input type="number" min="0" mdInput maxlength="6" placeholder="Square Feet" [(ngModel)]="card.squareFeet" name="squareFeet" (ngModelChange)="calcValuation(card.construction.value, card)">
+                    <input type="number" min="0" max="9999999" mdInput maxlength="7" placeholder="Square Feet" [(ngModel)]="card.squareFeet" name="squareFeet" (ngModelChange)="calcValuation(card.construction.value, card)">
                 </md-input-container>
               </p>
             </form>
