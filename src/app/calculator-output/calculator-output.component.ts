@@ -29,7 +29,6 @@ export class CalculatorOutputComponent implements OnInit, Input, DoCheck {
   }
   ngOnInit() { }
 
-
   sumValuation() {
     let valuation = 0;
     this.cards.forEach(function (card) { 
@@ -38,7 +37,6 @@ export class CalculatorOutputComponent implements OnInit, Input, DoCheck {
     this.calculations.valuation = 0;
     this.calculations.valuation = valuation;
   }
-
   sumBldgPermit() {
     let bldgPermit = 0;
     this.cards.forEach(function (card) { 
@@ -55,7 +53,6 @@ export class CalculatorOutputComponent implements OnInit, Input, DoCheck {
     this.calculations.reviewFee = 0;
     this.calculations.reviewFee = reviewFee;
   }
-
   sumElecPermit() {
     let elecPermit = 0;
     this.cards.forEach(function (card) { 
@@ -92,39 +89,36 @@ export class CalculatorOutputComponent implements OnInit, Input, DoCheck {
       var card = this.cards[this.cardindex];
 		  var changes = this.differ.diff(card.calculations);
       if (changes) {
-        			changes.forEachChangedItem(r => {
-                
-                if (r.key === 'valuation' && r.currentValue != r.previousValue && this.cardindex === card.cardindex) {
-                  this.sumValuation();
-                  this.sumBldgPermit();
-                  this.sumReviewFee();                    
-                  this.sumElecPermit(); 
-                  this.sumPlumPermit();   
-                  this.sumMechPermit(); 
-                  this.calculationService.sumTotalPermit(this.cards).then(sum => this.calculations.totPermit = sum);                  
-                }
-                // if (r.key === 'bldgPermit' && r.currentValue != r.previousValue && this.cardindex === card.cardindex) {
-                //   this.sumBldgPermit();                    
-                // }    
-                // if (r.key === 'reviewFee' && r.currentValue != r.previousValue && this.cardindex === card.cardindex) {
-                //   this.sumReviewFee();                    
-                // }           
-                // if (r.key === 'elecPermit' && r.currentValue != r.previousValue && this.cardindex === card.cardindex) {
-                //   this.sumElecPermit();                    
-                // }    
-                // if (r.key === 'plumPermit' && r.currentValue != r.previousValue && this.cardindex === card.cardindex) {
-                //   this.sumPlumPermit();                    
-                // }
-                // if (r.key === 'mechPermit' && r.currentValue != r.previousValue && this.cardindex === card.cardindex) {
-                //   this.sumMechPermit();                    
-                // }
-                // if (r.key === 'totPermit' && r.currentValue != r.previousValue && this.cardindex === card.cardindex) {
-                //  // this.sumTotPermit();;
-                //   this.calculationService.sumTotalPermit(this.cards).then(sum => this.calculations.totPermit = sum);
-                // }                                                                    
-              });
-      }
+        changes.forEachChangedItem(r => {
+          if (r.key === 'valuation' && r.currentValue != r.previousValue && this.cardindex === card.cardindex) {
+            this.sumValuation();
+            this.sumBldgPermit();
+            this.sumReviewFee();                    
+            this.sumElecPermit(); 
+            this.sumPlumPermit();   
+            this.sumMechPermit(); 
+            this.calculationService.sumTotalPermit(this.cards).then(sum => this.calculations.totPermit = sum);                  
+          }
+          // if (r.key === 'bldgPermit' && r.currentValue != r.previousValue && this.cardindex === card.cardindex) {
+          //   this.sumBldgPermit();                    
+          // }    
+          // if (r.key === 'reviewFee' && r.currentValue != r.previousValue && this.cardindex === card.cardindex) {
+          //   this.sumReviewFee();                    
+          // }           
+          // if (r.key === 'elecPermit' && r.currentValue != r.previousValue && this.cardindex === card.cardindex) {
+          //   this.sumElecPermit();                    
+          // }    
+          // if (r.key === 'plumPermit' && r.currentValue != r.previousValue && this.cardindex === card.cardindex) {
+          //   this.sumPlumPermit();                    
+          // }
+          // if (r.key === 'mechPermit' && r.currentValue != r.previousValue && this.cardindex === card.cardindex) {
+          //   this.sumMechPermit();                    
+          // }
+          // if (r.key === 'totPermit' && r.currentValue != r.previousValue && this.cardindex === card.cardindex) {
+          //  // this.sumTotPermit();;
+          //   this.calculationService.sumTotalPermit(this.cards).then(sum => this.calculations.totPermit = sum);
+          // }                                                                    
+        });
+    }
   }
-
-
 }

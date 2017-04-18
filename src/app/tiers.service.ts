@@ -26,8 +26,6 @@ export class TiersService {
           tier.cumulative = (((tier.max - tier.min) / 1000) * tier.costper) + tiers[i - 1]['cumulative'];
         }
     });
-    
     return tiers;
-  } 
-
+  }
 }

@@ -6,7 +6,6 @@ export class CalculationService {
   valuation: number;
   minFee: number = 106;
   percents: any = {building: {all: 0.00077944778071331, r3: 0.002616923}, plan: {all: 0.550907693344574, r3: 0.717419837103396}, elec: {all: 1.00793835113169, r3: 0.669736429687697}, plum: {all: 0.551694198410728, r3: 0.223647600095625}, mech: {all: 0.778591078767941, r3: 0.305407886978742}};
-
   constructor() { }
 
   calcValuation(card: DevelopmentCard): Promise<number>{
@@ -15,10 +14,8 @@ export class CalculationService {
     if (card.constructScope && card.squareFeet && card.construction) {
       valuation = meansLocationFactor * card.constructScope.percent * card.squareFeet * card.construction.value;
     }
-
     return Promise.resolve(valuation);
   }
-
   calcBldgPermit(card: DevelopmentCard, tiers: Array<Tier>): Promise<number> {
     let costper = 0;
     let bldgPermit = 0;
@@ -62,7 +59,6 @@ export class CalculationService {
         fee = this.minFee;
       }
     }
-
     return Promise.resolve(fee);
   }
   calcElecPermit(card:DevelopmentCard): Promise<number> {
@@ -75,7 +71,6 @@ export class CalculationService {
         fee = this.minFee;
       }
     }
-
     return Promise.resolve(fee);
   }  
   calcPlumPermit(card:DevelopmentCard): Promise<number> {
@@ -88,7 +83,6 @@ export class CalculationService {
         fee = this.minFee;
       }   
     }
- 
     return Promise.resolve(fee);
   }  
   calcMechPermit(card:DevelopmentCard): Promise<number> {
@@ -101,7 +95,6 @@ export class CalculationService {
         fee = this.minFee;
       }          
     }
-
     return Promise.resolve(fee);
   }     
   calcTotalPermit(card:DevelopmentCard): Promise<number> {
