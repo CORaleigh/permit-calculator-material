@@ -31,7 +31,6 @@ export class CalculationService {
           } else {
             let i = 0;
             let tier = null;
-            console.log(card.calculations.valuation);
             for (; i < tiers.length; i++) {
               tier = tiers[i];
               if ((card.calculations.valuation > tier.min && card.calculations.valuation < tier.max) || !tier.max) {
