@@ -27,12 +27,7 @@ export class CalculatorOutputComponent implements OnInit, Input, DoCheck {
   constructor(private differs: KeyValueDiffers, private tiersService: TiersService, private calculationService: CalculationService) {
     this.differ = differs.find({}).create(null);
   }
-  ngOnInit() {
-   // this.valuation = 0;
-    //this.calculations = new Calculations();
-
-  
-  }
+  ngOnInit() { }
 
 
   sumValuation() {
@@ -94,8 +89,6 @@ export class CalculatorOutputComponent implements OnInit, Input, DoCheck {
     this.calculations.totPermit = totPermit;
   }    
   ngDoCheck() {
-
-    //this.cards.forEach(function (card) {
       var card = this.cards[this.cardindex];
 		  var changes = this.differ.diff(card.calculations);
       if (changes) {
@@ -130,18 +123,7 @@ export class CalculatorOutputComponent implements OnInit, Input, DoCheck {
                 //   this.calculationService.sumTotalPermit(this.cards).then(sum => this.calculations.totPermit = sum);
                 // }                                                                    
               });
-
-          // var cards = this.cards;
-          // var changes = this.differ.diff(cards);
-          // if (changes) {
-          //   changes.forEachRemovedItem(r => console.log('removed ' + r.currentValue));
-          // }        
-			//changes.forEachAddedItem(r => console.log('added ' + r.currentValue));
-		//	changes.forEachRemovedItem(r => console.log('removed ' + r.currentValue));
       }
-
-
-   // });
   }
 
 
