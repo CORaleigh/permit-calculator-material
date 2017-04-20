@@ -5,11 +5,13 @@ import { Tier } from './tier';
 export class CalculationService {
   valuation: number;
   minFee: number = 106;
-  percents: any = {building: {all: 0.00077944778071331, r3: 0.002616923}, plan: {all: 0.550907693344574, r3: 0.717419837103396}, elec: {all: 1.00793835113169, r3: 0.669736429687697}, plum: {all: 0.551694198410728, r3: 0.223647600095625}, mech: {all: 0.778591078767941, r3: 0.305407886978742}};
+  percents: any = {building: {all: 0.00077944778071331, r3: 0.0026}, plan: {all: 0.55, r3: 0.72}, elec: {all: 1.01, r3: 0.67}, plum: {all: 0.55, r3: 0.22}, mech: {all: 0.78, r3: 0.31}};
+  
+  //percents: any = {building: {all: 0.00077944778071331, r3: 0.002616923}, plan: {all: 0.550907693344574, r3: 0.717419837103396}, elec: {all: 1.00793835113169, r3: 0.669736429687697}, plum: {all: 0.551694198410728, r3: 0.223647600095625}, mech: {all: 0.778591078767941, r3: 0.305407886978742}};
   constructor() { }
 
   calcValuation(card: DevelopmentCard): Promise<number>{
-    let meansLocationFactor = 0.838137101;
+    let meansLocationFactor = 0.8381;//0.838137101;
     let valuation = 0;
     if (card.constructScope && card.squareFeet && card.construction) {
       valuation = meansLocationFactor * card.constructScope.percent * card.squareFeet * card.construction.value;
@@ -24,7 +26,8 @@ export class CalculationService {
       if (card.calculations.valuation > 0) { 
         if (card.building.group && card.construction.value) {
           if (card.building.group === 'R-3 Residential, one- and two-family') {
-            card.calculations.bldgPermit = card.calculations.valuation * 0.00261692324298379 * 0.888226389234951;
+            debugger;
+            card.calculations.bldgPermit = card.calculations.valuation * 0.0026 * 0.888226389234951;//* 0.00261692324298379 * 0.888226389234951;
           } else {
             let i = 0;
             let tier = null;

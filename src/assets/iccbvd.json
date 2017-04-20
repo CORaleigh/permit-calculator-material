@@ -1,380 +1,845 @@
-[
-{
-"group": "A-1 Assembly, theaters, with stage",
-"values": [
-{"key":"IA", "value": 226.92},
-{"key": "IB", "value": 219.1},
-{"key": "IIA", "value": 213.8},
-{"key": "IIB", "value": 205.04},
-{"key": "IIIA", "value": 192.95},
-{"key": "IIIB", "value": 187.36},
-{"key": "IV", "value": 198.56},
-{"key": "VA", "value": 176.18},
-{"key": "VB", "value": 169.73}
-]
-},
-{
-"group": "A-1 Assembly, theaters, without stage",
-"values": [
-{"key":"IA", "value": 207.97},
-{"key": "IB", "value": 200.15},
-{"key": "IIA", "value": 194.85},
-{"key": "IIB", "value": 186.09},
-{"key": "IIIA", "value": 174.15},
-{"key": "IIIB", "value": 168.55},
-{"key": "IV", "value": 179.61},
-{"key": "VA", "value": 157.38},
-{"key": "VB", "value": 150.92}
-]
-},
-{
-"group": "A-2 Assembly, nightclubs",
-"values": [
-{"key":"IA", "value": 177.49},
-{"key": "IB", "value": 172.34},
-{"key": "IIA", "value": 167.98},
-{"key": "IIB", "value": 161.18},
-{"key": "IIIA", "value": 151.95},
-{"key": "IIIB", "value": 147.76},
-{"key": "IV", "value": 155.52},
-{"key": "VA", "value": 137.58},
-{"key": "VB", "value": 132.93}
-]
-},
-{
-"group": "A-2 Assembly, restaurants, bars, banquet halls",
-"values": [
-{"key":"IA", "value": 176.49},
-{"key": "IB", "value": 171.34},
-{"key": "IIA", "value": 165.98},
-{"key": "IIB", "value": 160.18},
-{"key": "IIIA", "value": 149.95},
-{"key": "IIIB", "value": 146.76},
-{"key": "IV", "value": 154.52},
-{"key": "VA", "value": 135.58},
-{"key": "VB", "value": 131.93}
-]
-},
-{
-"group": "A-3 Assembly, churches",
-"values": [
-{"key":"IA", "value": 209.94},
-{"key": "IB", "value": 202.13},
-{"key": "IIA", "value": 196.83},
-{"key": "IIB", "value": 188.07},
-{"key": "IIIA", "value": 176.32},
-{"key": "IIIB", "value": 170.72},
-{"key": "IV", "value": 181.59},
-{"key": "VA", "value": 159.54},
-{"key": "VB", "value": 153.09}
-]
-},
-{
-"group": "A-3 Assembly, general, community halls, lIBraries, museums",
-"values": [
-{"key":"IA", "value": 175.12},
-{"key": "IB", "value": 167.31},
-{"key": "IIA", "value": 161.01},
-{"key": "IIB", "value": 153.25},
-{"key": "IIIA", "value": 140.5},
-{"key": "IIIB", "value": 135.9},
-{"key": "IV", "value": 146.77},
-{"key": "VA", "value": 123.72},
-{"key": "VB", "value": 118.27}
-]
-},
-{
-"group": "A-4 Assembly, arenas",
-"values": [
-{"key":"IA", "value": 206.97},
-{"key": "IB", "value": 199.15},
-{"key": "IIA", "value": 192.85},
-{"key": "IIB", "value": 185.09},
-{"key": "IIIA", "value": 172.15},
-{"key": "IIIB", "value": 167.55},
-{"key": "IV", "value": 178.61},
-{"key": "VA", "value": 155.38},
-{"key": "VB", "value": 149.92}
-]
-},
-{
-"group": "B Business",
-"values": [
-{"key":"IA", "value": 181.12},
-{"key": "IB", "value": 174.43},
-{"key": "IIA", "value": 168.67},
-{"key": "IIB", "value": 160.26},
-{"key": "IIIA", "value": 146.18},
-{"key": "IIIB", "value": 140.7},
-{"key": "IV", "value": 153.97},
-{"key": "VA", "value": 128.34},
-{"key": "VB", "value": 122.72}
-]
-},
-{
-"group": "E Educational",
-"values": [
-{"key":"IA", "value": 192.29},
-{"key": "IB", "value": 185.47},
-{"key": "IIA", "value": 180.15},
-{"key": "IIB", "value": 172.12},
-{"key": "IIIA", "value": 160.72},
-{"key": "IIIB", "value": 152.55},
-{"key": "IV", "value": 166.18},
-{"key": "VA", "value": 140.46},
-{"key": "VB", "value": 136.18}
-]
-},
-{
-"group": "F-1 Factory and industrial, moderate hazard",
-"values": [
-{"key":"IA", "value": 108.53},
-{"key": "IB", "value": 103.54},
-{"key": "IIA", "value": 97.56},
-{"key": "IIB", "value": 93.81},
-{"key": "IIIA", "value": 84.17},
-{"key": "IIIB", "value": 80.36},
-{"key": "IV", "value": 89.86},
-{"key": "VA", "value": 70.57},
-{"key": "VB", "value": 66.08}
-]
-},
-{
-"group": "F-2 Factory and industrial, low hazard",
-"values": [
-{"key":"IA", "value": 107.53},
-{"key": "IB", "value": 102.54},
-{"key": "IIA", "value": 97.56},
-{"key": "IIB", "value": 92.81},
-{"key": "IIIA", "value": 84.17},
-{"key": "IIIB", "value": 79.36},
-{"key": "IV", "value": 88.86},
-{"key": "VA", "value": 70.57},
-{"key": "VB", "value": 65.08}
-]
-},
-{
-"group": "H-1 High Hazard, explosives",
-"values": [
-{"key":"IA", "value": 101.6},
-{"key": "IB", "value": 96.6},
-{"key": "IIA", "value": 91.63},
-{"key": "IIB", "value": 86.88},
-{"key": "IIIA", "value": 78.44},
-{"key": "IIIB", "value": 73.62},
-{"key": "IV", "value": 82.93},
-{"key": "VA", "value": 64.84},
-{"key": "VB", "value": 0}
-]
-},
-{
-"group": "H234 High Hazard",
-"values": [
-{"key":"IA", "value": 101.6},
-{"key": "IB", "value": 96.6},
-{"key": "IIA", "value": 91.63},
-{"key": "IIB", "value": 86.88},
-{"key": "IIIA", "value": 78.44},
-{"key": "IIIB", "value": 73.62},
-{"key": "IV", "value": 82.93},
-{"key": "VA", "value": 64.84},
-{"key": "VB", "value": 59.35}
-]
-},
-{
-"group": "H-5 HPM",
-"values": [
-{"key":"IA", "value": 181.12},
-{"key": "IB", "value": 174.43},
-{"key": "IIA", "value": 168.67},
-{"key": "IIB", "value": 160.26},
-{"key": "IIIA", "value": 146.18},
-{"key": "IIIB", "value": 140.7},
-{"key": "IV", "value": 153.97},
-{"key": "VA", "value": 128.34},
-{"key": "VB", "value": 122.72}
-]
-},
-{
-"group": "I-1 Institutional, supervised environment",
-"values": [
-{"key":"IA", "value": 180.72},
-{"key": "IB", "value": 174.14},
-{"key": "IIA", "value": 169.28},
-{"key": "IIB", "value": 161.12},
-{"key": "IIIA", "value": 149.06},
-{"key": "IIIB", "value": 145.04},
-{"key": "IV", "value": 161.12},
-{"key": "VA", "value": 133.69},
-{"key": "VB", "value": 129.43}
-]
-},
-{
-"group": "I-2 Institutional, hospitals",
-"values": [
-{"key":"IA", "value": 304.8},
-{"key": "IB", "value": 298.11},
-{"key": "IIA", "value": 292.36},
-{"key": "IIB", "value": 283.95},
-{"key": "IIIA", "value": 268.92},
-{"key": "IIIB", "value": 0},
-{"key": "IV", "value": 277.65},
-{"key": "VA", "value": 251.09},
-{"key": "VB", "value": 0}
-]
-},
-{
-"group": "I-2 Institutional, nursing homes",
-"values": [
-{"key":"IA", "value": 211.2},
-{"key": "IB", "value": 204.51},
-{"key": "IIA", "value": 198.75},
-{"key": "IIB", "value": 190.34},
-{"key": "IIIA", "value": 177.26},
-{"key": "IIIB", "value": 0},
-{"key": "IV", "value": 184.05},
-{"key": "VA", "value": 159.42},
-{"key": "VB", "value": 0}
-]
-},
-{
-"group": "I-3 Institutional, restrained",
-"values": [
-{"key":"IA", "value": 206.08},
-{"key": "IB", "value": 199.38},
-{"key": "IIA", "value": 193.63},
-{"key": "IIB", "value": 185.22},
-{"key": "IIIA", "value": 172.62},
-{"key": "IIIB", "value": 166.14},
-{"key": "IV", "value": 178.93},
-{"key": "VA", "value": 154.78},
-{"key": "VB", "value": 147.16}
-]
-},
-{
-"group": "I-4 Institutional, day care facilities",
-"values": [
-{"key":"IA", "value": 180.72},
-{"key": "IB", "value": 174.14},
-{"key": "IIA", "value": 169.28},
-{"key": "IIB", "value": 161.12},
-{"key": "IIIA", "value": 149.06},
-{"key": "IIIB", "value": 145.04},
-{"key": "IV", "value": 161.12},
-{"key": "VA", "value": 133.69},
-{"key": "VB", "value": 129.43}
-]
-},
-{
-"group": "M Mercantile",
-"values": [
-{"key":"IA", "value": 132.23},
-{"key": "IB", "value": 127.09},
-{"key": "IIA", "value": 121.73},
-{"key": "IIB", "value": 115.92},
-{"key": "IIIA", "value": 106.18},
-{"key": "IIIB", "value": 102.99},
-{"key": "IV", "value": 110.26},
-{"key": "VA", "value": 91.82},
-{"key": "VB", "value": 88.16}
-]
-},
-{
-"group": "R-1 Residential, hotels",
-"values": [
-{"key":"IA", "value": 182.28},
-{"key": "IB", "value": 175.7},
-{"key": "IIA", "value": 170.83},
-{"key": "IIB", "value": 162.68},
-{"key": "IIIA", "value": 150.87},
-{"key": "IIIB", "value": 146.84},
-{"key": "IV", "value": 162.68},
-{"key": "VA", "value": 135.49},
-{"key": "VB", "value": 131.23}
-]
-},
-{
-"group": "R-2 Residential, multiple family",
-"values": [
-{"key":"IA", "value": 152.86},
-{"key": "IB", "value": 146.27},
-{"key": "IIA", "value": 141.41},
-{"key": "IIB", "value": 133.25},
-{"key": "IIIA", "value": 122.04},
-{"key": "IIIB", "value": 118.01},
-{"key": "IV", "value": 133.25},
-{"key": "VA", "value": 106.66},
-{"key": "VB", "value": 102.41}
-]
-},
-{
-"group": "R-3 Residential, one- and two-family",
-"values": [
-{"key":"IA", "value": 143.93},
-{"key": "IB", "value": 139.97},
-{"key": "IIA", "value": 136.51},
-{"key": "IIB", "value": 132.83},
-{"key": "IIIA", "value": 127.95},
-{"key": "IIIB", "value": 124.61},
-{"key": "IV", "value": 130.57},
-{"key": "VA", "value": 119.73},
-{"key": "VB", "value": 112.65}
-]
-},
-{
-"group": "R-4 Residential, care/assisted lIVing facilities",
-"values": [
-{"key":"IA", "value": 180.72},
-{"key": "IB", "value": 174.14},
-{"key": "IIA", "value": 169.28},
-{"key": "IIB", "value": 161.12},
-{"key": "IIIA", "value": 149.06},
-{"key": "IIIB", "value": 145.04},
-{"key": "IV", "value": 161.12},
-{"key": "VA", "value": 133.69},
-{"key": "VB", "value": 129.43}
-]
-},
-{
-"group": "S-1 Storage, moderate hazard",
-"values": [
-{"key":"IA", "value": 100.6},
-{"key": "IB", "value": 95.6},
-{"key": "IIA", "value": 89.63},
-{"key": "IIB", "value": 85.88},
-{"key": "IIIA", "value": 76.44},
-{"key": "IIIB", "value": 72.62},
-{"key": "IV", "value": 81.93},
-{"key": "VA", "value": 62.84},
-{"key": "VB", "value": 58.35}
-]
-},
-{
-"group": "S-2 Storage, low hazard",
-"values": [
-{"key":"IA", "value": 99.6},
-{"key": "IB", "value": 94.6},
-{"key": "IIA", "value": 89.63},
-{"key": "IIB", "value": 84.88},
-{"key": "IIIA", "value": 76.44},
-{"key": "IIIB", "value": 71.62},
-{"key": "IV", "value": 80.93},
-{"key": "VA", "value": 62.84},
-{"key": "VB", "value": 57.35}
-]
-},
-{
-"group": "U Utility, miscellaneous",
-"values": [
-{"key":"IA", "value": 77.82},
-{"key": "IB", "value": 73.48},
-{"key": "IIA", "value": 69.04},
-{"key": "IIB", "value": 65.52},
-{"key": "IIIA", "value": 59.23},
-{"key": "IIIB", "value": 55.31},
-{"key": "IV", "value": 62.58},
-{"key": "VA", "value": 46.83},
-{"key": "VB", "value": 44.63}
-]
-}
+[{
+		"group": "A-1 Assembly, theaters, with stage",
+		"values": [{
+			"key": "IA",
+			"value": 229.26
+		}, {
+			"key": "IB",
+			"value": 221.37
+		}, {
+			"key": "IIA",
+			"value": 216.01
+		}, {
+			"key": "IIB",
+			"value": 207.16
+		}, {
+			"key": "IIIA",
+			"value": 194.94
+		}, {
+			"key": "IIIB",
+			"value": 189.29
+		}, {
+			"key": "IV",
+			"value": 200.61
+		}, {
+			"key": "VA",
+			"value": 178.00
+		}, {
+			"key": "VB",
+			"value": 171.48
+		}]
+	},
+	{
+		"group": "A-1 Assembly, theaters, without stage",
+		"values": [{
+			"key": "IA",
+			"value": 210.11
+		}, {
+			"key": "IB",
+			"value": 202.22
+		}, {
+			"key": "IIA",
+			"value": 196.86
+		}, {
+			"key": "IIB",
+			"value": 188.01
+		}, {
+			"key": "IIIA",
+			"value": 175.94
+		}, {
+			"key": "IIIB",
+			"value": 170.29
+		}, {
+			"key": "IV",
+			"value": 181.46
+		}, {
+			"key": "VA",
+			"value": 158.99
+		}, {
+			"key": "VB",
+			"value": 152.48
+		}]
+	},
+	{
+		"group": "A-2 Assembly, nightclubs",
+		"values": [{
+			"key": "IA",
+			"value": 179.28
+		}, {
+			"key": "IB",
+			"value": 174.08
+		}, {
+			"key": "IIA",
+			"value": 169.68
+		}, {
+			"key": "IIB",
+			"value": 162.81
+		}, {
+			"key": "IIIA",
+			"value": 153.48
+		}, {
+			"key": "IIIB",
+			"value": 149.24
+		}, {
+			"key": "IV",
+			"value": 157.08
+		}, {
+			"key": "VA",
+			"value": 138.97
+		}, {
+			"key": "VB",
+			"value": 134.26
+		}]
+	},
+	{
+		"group": "A-2 Assembly, restaurants, bars, banquet halls",
+		"values": [{
+			"key": "IA",
+			"value": 178.28
+		}, {
+			"key": "IB",
+			"value": 173.08
+		}, {
+			"key": "IIA",
+			"value": 167.68
+		}, {
+			"key": "IIB",
+			"value": 161.81
+		}, {
+			"key": "IIIA",
+			"value": 151.48
+		}, {
+			"key": "IIIB",
+			"value": 148.24
+		}, {
+			"key": "IV",
+			"value": 156.08
+		}, {
+			"key": "VA",
+			"value": 136.97
+		}, {
+			"key": "VB",
+			"value": 133.26
+		}]
+	},
+	{
+		"group": "A-3 Assembly, churches",
+		"values": [{
+			"key": "IA",
+			"value": 212.12
+		}, {
+			"key": "IB",
+			"value": 204.22
+		}, {
+			"key": "IIA",
+			"value": 198.87
+		}, {
+			"key": "IIB",
+			"value": 190.01
+		}, {
+			"key": "IIIA",
+			"value": 178.14
+		}, {
+			"key": "IIIB",
+			"value": 172.49
+		}, {
+			"key": "IV",
+			"value": 183.47
+		}, {
+			"key": "VA",
+			"value": 161.20
+		}, {
+			"key": "VB",
+			"value": 154.68
+		}]
+	},
+	{
+		"group": "A-3 Assembly, general, community halls, libraries, museums",
+		"values": [{
+			"key": "IA",
+			"value": 176.94
+		}, {
+			"key": "IB",
+			"value": 169.04
+		}, {
+			"key": "IIA",
+			"value": 162.69
+		}, {
+			"key": "IIB",
+			"value": 154.83
+		}, {
+			"key": "IIIA",
+			"value": 141.96
+		}, {
+			"key": "IIIB",
+			"value": 137.30
+		}, {
+			"key": "IV",
+			"value": 148.28
+		}, {
+			"key": "VA",
+			"value": 125.01
+		}, {
+			"key": "VB",
+			"value": 119.50
+		}]
+	},
+	{
+		"group": "A-4 Assembly, arenas",
+		"values": [{
+			"key": "IA",
+			"value": 209.11
+		}, {
+			"key": "IB",
+			"value": 201.22
+		}, {
+			"key": "IIA",
+			"value": 194.86
+		}, {
+			"key": "IIB",
+			"value": 187.01
+		}, {
+			"key": "IIIA",
+			"value": 173.94
+		}, {
+			"key": "IIIB",
+			"value": 169.29
+		}, {
+			"key": "IV",
+			"value": 180.46
+		}, {
+			"key": "VA",
+			"value": 156.99
+		}, {
+			"key": "VB",
+			"value": 151.48
+		}]
+	},
+
+	{
+		"group": "B Business",
+		"values": [{
+			"key": "IA",
+			"value": 182.98
+		}, {
+			"key": "IB",
+			"value": 176.21
+		}, {
+			"key": "IIA",
+			"value": 170.40
+		}, {
+			"key": "IIB",
+			"value": 161.91
+		}, {
+			"key": "IIIA",
+			"value": 147.69
+		}, {
+			"key": "IIIB",
+			"value": 142.14
+		}, {
+			"key": "IV",
+			"value": 155.55
+		}, {
+			"key": "VA",
+			"value": 129.66
+		}, {
+			"key": "VB",
+			"value": 123.97
+		}]
+	},
+
+	{
+		"group": "E Educational",
+		"values": [{
+			"key": "IA",
+			"value": 194.27
+		}, {
+			"key": "IB",
+			"value": 187.38
+		}, {
+			"key": "IIA",
+			"value": 182.00
+		}, {
+			"key": "IIB",
+			"value": 173.88
+		}, {
+			"key": "IIIA",
+			"value": 162.37
+		}, {
+			"key": "IIIB",
+			"value": 154.12
+		}, {
+			"key": "IV",
+			"value": 167.88
+		}, {
+			"key": "VA",
+			"value": 141.89
+		}, {
+			"key": "VB",
+			"value": 137.57
+		}]
+	},
+
+	{
+		"group": "F-1 Factory and industrial, moderate hazard",
+		"values": [{
+			"key": "IA",
+			"value": 109.64
+		}, {
+			"key": "IB",
+			"value": 104.60
+		}, {
+			"key": "IIA",
+			"value": 98.57
+		}, {
+			"key": "IIB",
+			"value": 94.77
+		}, {
+			"key": "IIIA",
+			"value": 85.03
+		}, {
+			"key": "IIIB",
+			"value": 81.17
+		}, {
+			"key": "IV",
+			"value": 90.78
+		}, {
+			"key": "VA",
+			"value": 71.30
+		}, {
+			"key": "VB",
+			"value": 66.75
+		}]
+	},
+	{
+		"group": "F-2 Factory and industrial, low hazard",
+		"values": [{
+			"key": "IA",
+			"value": 108.64
+		}, {
+			"key": "IB",
+			"value": 103.60
+		}, {
+			"key": "IIA",
+			"value": 98.57
+		}, {
+			"key": "IIB",
+			"value": 93.77
+		}, {
+			"key": "IIIA",
+			"value": 85.03
+		}, {
+			"key": "IIIB",
+			"value": 80.17
+		}, {
+			"key": "IV",
+			"value": 89.78
+		}, {
+			"key": "VA",
+			"value": 71.30
+		}, {
+			"key": "VB",
+			"value": 65.75
+		}]
+	},
+	{
+		"group": "H-1 High Hazard, explosives",
+		"values": [{
+			"key": "IA",
+			"value": 102.63
+		}, {
+			"key": "IB",
+			"value": 97.58
+		}, {
+			"key": "IIA",
+			"value": 92.55
+		}, {
+			"key": "IIB",
+			"value": 87.75
+		}, {
+			"key": "IIIA",
+			"value": 79.22
+		}, {
+			"key": "IIIB",
+			"value": 74.36
+		}, {
+			"key": "IV",
+			"value": 83.76
+		}, {
+			"key": "VA",
+			"value": 65.48
+		}, {
+			"key": "VB",
+			"value": 0.00
+		}]
+	},
+
+	{
+		"group": "H234 High Hazard",
+		"values": [{
+			"key": "IA",
+			"value": 102.63
+		}, {
+			"key": "IB",
+			"value": 97.58
+		}, {
+			"key": "IIA",
+			"value": 92.55
+		}, {
+			"key": "IIB",
+			"value": 87.75
+		}, {
+			"key": "IIIA",
+			"value": 79.22
+		}, {
+			"key": "IIIB",
+			"value": 74.36
+		}, {
+			"key": "IV",
+			"value": 83.76
+		}, {
+			"key": "VA",
+			"value": 65.48
+		}, {
+			"key": "VB",
+			"value": 59.94
+		}]
+	},
+
+	{
+		"group": "H-5 HPM",
+		"values": [{
+			"key": "IA",
+			"value": 182.98
+		}, {
+			"key": "IB",
+			"value": 176.21
+		}, {
+			"key": "IIA",
+			"value": 170.40
+		}, {
+			"key": "IIB",
+			"value": 161.91
+		}, {
+			"key": "IIIA",
+			"value": 147.69
+		}, {
+			"key": "IIIB",
+			"value": 142.14
+		}, {
+			"key": "IV",
+			"value": 155.55
+		}, {
+			"key": "VA",
+			"value": 129.66
+		}, {
+			"key": "VB",
+			"value": 123.97
+		}]
+	},
+
+	{
+		"group": "I-1 Institutional, supervised environment",
+		"values": [{
+			"key": "IA",
+			"value": 183.95
+		}, {
+			"key": "IB",
+			"value": 177.72
+		}, {
+			"key": "IIA",
+			"value": 172.57
+		}, {
+			"key": "IIB",
+			"value": 165.30
+		}, {
+			"key": "IIIA",
+			"value": 152.29
+		}, {
+			"key": "IIIB",
+			"value": 148.15
+		}, {
+			"key": "IV",
+			"value": 165.39
+		}, {
+			"key": "VA",
+			"value": 136.43
+		}, {
+			"key": "VB",
+			"value": 132.19
+		}]
+	},
+	{
+		"group": "I-2 Institutional, hospitals",
+		"values": [{
+			"key": "IA",
+			"value": 307.93
+		}, {
+			"key": "IB",
+			"value": 301.16
+		}, {
+			"key": "IIA",
+			"value": 295.35
+		}, {
+			"key": "IIB",
+			"value": 286.86
+		}, {
+			"key": "IIIA",
+			"value": 271.68
+		}, {
+			"key": "IIIB",
+			"value": 0.00
+		}, {
+			"key": "IV",
+			"value": 280.50
+		}, {
+			"key": "VA",
+			"value": 253.65
+		}, {
+			"key": "VB",
+			"value": 0.00
+		}]
+	},
+	{
+		"group": "I-2 Institutional, nursing homes",
+		"values": [{
+			"key": "IA",
+			"value": 213.36
+		}, {
+			"key": "IB",
+			"value": 206.59
+		}, {
+			"key": "IIA",
+			"value": 200.78
+		}, {
+			"key": "IIB",
+			"value": 192.29
+		}, {
+			"key": "IIIA",
+			"value": 179.07
+		}, {
+			"key": "IIIB",
+			"value": 0.00
+		}, {
+			"key": "IV",
+			"value": 185.93
+		}, {
+			"key": "VA",
+			"value": 161.04
+		}, {
+			"key": "VB",
+			"value": 0.00
+		}]
+	},
+	{
+		"group": "I-3 Institutional, restrained",
+		"values": [{
+			"key": "IA",
+			"value": 208.19
+		}, {
+			"key": "IB",
+			"value": 201.43
+		}, {
+			"key": "IIA",
+			"value": 195.62
+		}, {
+			"key": "IIB",
+			"value": 187.12
+		}, {
+			"key": "IIIA",
+			"value": 174.39
+		}, {
+			"key": "IIIB",
+			"value": 167.85
+		}, {
+			"key": "IV",
+			"value": 180.76
+		}, {
+			"key": "VA",
+			"value": 156.37
+		}, {
+			"key": "VB",
+			"value": 148.68
+		}]
+	},
+	{
+		"group": "I-4 Institutional, day care facilities",
+		"values": [{
+			"key": "IA",
+			"value": 183.95
+		}, {
+			"key": "IB",
+			"value": 177.72
+		}, {
+			"key": "IIA",
+			"value": 172.57
+		}, {
+			"key": "IIB",
+			"value": 165.30
+		}, {
+			"key": "IIIA",
+			"value": 152.29
+		}, {
+			"key": "IIIB",
+			"value": 148.15
+		}, {
+			"key": "IV",
+			"value": 165.39
+		}, {
+			"key": "VA",
+			"value": 136.43
+		}, {
+			"key": "VB",
+			"value": 132.19
+		}]
+	},
+	{
+		"group": "M Mercantile",
+		"values": [{
+			"key": "IA",
+			"value": 133.57
+		}, {
+			"key": "IB",
+			"value": 128.37
+		}, {
+			"key": "IB",
+			"value": 122.97
+		}, {
+			"key": "IIA",
+			"value": 117.10
+		}, {
+			"key": "IIB",
+			"value": 107.27
+		}, {
+			"key": "IIIA",
+			"value": 104.03
+		}, {
+			"key": "IIIB",
+			"value": 111.38
+		}, {
+			"key": "VA",
+			"value": 92.75
+		}, {
+			"key": "VB",
+			"value": 89.05
+		}]
+	},
+
+	{
+		"group": "R-1 Residential, hotels",
+		"values": [{
+			"key": "IA",
+			"value": 185.63
+		}, {
+			"key": "IB",
+			"value": 179.39
+		}, {
+			"key": "IIA",
+			"value": 174.24
+		}, {
+			"key": "IIB",
+			"value": 166.97
+		}, {
+			"key": "IIIA",
+			"value": 153.72
+		}, {
+			"key": "IIIB",
+			"value": 149.58
+		}, {
+			"key": "IV",
+			"value": 167.06
+		}, {
+			"key": "VA",
+			"value": 137.86
+		}, {
+			"key": "VB",
+			"value": 133.61
+		}]
+	},
+	{
+		"group": "R-2 Residential, multiple family",
+		"values": [{
+			"key": "IA",
+			"value": 155.74
+		}, {
+			"key": "IB",
+			"value": 149.50
+		}, {
+			"key": "IIA",
+			"value": 144.35
+		}, {
+			"key": "IIB",
+			"value": 137.09
+		}, {
+			"key": "IIIA",
+			"value": 124.57
+		}, {
+			"key": "IIIB",
+			"value": 120.43
+		}, {
+			"key": "IV",
+			"value": 137.17
+		}, {
+			"key": "VA",
+			"value": 108.71
+		}, {
+			"key": "VB",
+			"value": 104.47
+		}]
+	},
+	{
+		"group": "R-3 Residential, one- and two-family",
+		"values": [{
+			"key": "IA",
+			"value": 145.23
+		}, {
+			"key": "IB",
+			"value": 141.28
+		}, {
+			"key": "IIA",
+			"value": 137.64
+		}, {
+			"key": "IIB",
+			"value": 134.18
+		}, {
+			"key": "IIIA",
+			"value": 129.27
+		}, {
+			"key": "IIIB",
+			"value": 125.87
+		}, {
+			"key": "IV",
+			"value": 131.94
+		}, {
+			"key": "VA",
+			"value": 120.96
+		}, {
+			"key": "VB",
+			"value": 113.85
+		}]
+	},
+	{
+		"group": "R-4 Residential, care/assisted living facilities",
+		"values": [{
+			"key": "IA",
+			"value": 183.95
+		}, {
+			"key": "IB",
+			"value": 177.72
+		}, {
+			"key": "IIA",
+			"value": 172.57
+		}, {
+			"key": "IIB",
+			"value": 165.30
+		}, {
+			"key": "IIIA",
+			"value": 152.29
+		}, {
+			"key": "IIIB",
+			"value": 148.15
+		}, {
+			"key": "IV",
+			"value": 165.39
+		}, {
+			"key": "VA",
+			"value": 136.43
+		}, {
+			"key": "VB",
+			"value": 132.19
+		}]
+	},
+	{
+		"group": "S-1 Storage, moderate hazard",
+		"values": [{
+			"key": "IA",
+			"value": 101.63
+		}, {
+			"key": "IB",
+			"value": 96.58
+		}, {
+			"key": "IIA",
+			"value": 90.55
+		}, {
+			"key": "IIB",
+			"value": 86.75
+		}, {
+			"key": "IIIA",
+			"value": 77.22
+		}, {
+			"key": "IIIB",
+			"value": 73.36
+		}, {
+			"key": "IV",
+			"value": 82.76
+		}, {
+			"key": "VA",
+			"value": 63.48
+		}, {
+			"key": "VB",
+			"value": 58.94
+		}]
+	},
+	{
+		"group": "S-2 Storage, low hazard",
+		"values": [{
+			"key": "IA",
+			"value": 100.63
+		}, {
+			"key": "IB",
+			"value": 95.58
+		}, {
+			"key": "IIA",
+			"value": 90.55
+		}, {
+			"key": "IIB",
+			"value": 85.75
+		}, {
+			"key": "IIIA",
+			"value": 77.22
+		}, {
+			"key": "IIIB",
+			"value": 72.36
+		}, {
+			"key": "IV",
+			"value": 81.76
+		}, {
+			"key": "VA",
+			"value": 63.48
+		}, {
+			"key": "VB",
+			"value": 57.94
+		}]
+	},
+	{
+		"group": "U Utility, miscellaneous",
+		"values": [{
+			"key": "IA",
+			"value": 78.63
+		}, {
+			"key": "IB",
+			"value": 74.24
+		}, {
+			"key": "IIA",
+			"value": 69.76
+		}, {
+			"key": "IIB",
+			"value": 66.20
+		}, {
+			"key": "IIIA",
+			"value": 59.84
+		}, {
+			"key": "IIIB",
+			"value": 55.88
+		}, {
+			"key": "IV",
+			"value": 63.23
+		}, {
+			"key": "VA",
+			"value": 47.31
+		}, {
+			"key": "VB",
+			"value": 45.09
+		}]
+	}
 ]
