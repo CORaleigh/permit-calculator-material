@@ -20,7 +20,7 @@
                 </md-select>
               </p>
               <p>
-                <md-select placeholder="Contruction Scope" [(ngModel)]="card.constructScope" name="scope" (ngModelChange)="calcValuation(card.construction.value, card)">
+                <md-select placeholder="Construction Scope" [(ngModel)]="card.constructScope" name="scope" (ngModelChange)="calcValuation(card.construction.value, card)">
                     <md-option *ngFor="let scope of scopes" [value]="scope">
                         {{scope.name}}
                     </md-option>
