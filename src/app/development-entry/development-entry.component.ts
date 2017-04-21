@@ -125,9 +125,10 @@ export class DevelopmentEntryComponent implements OnInit {
     let devcard = new DevelopmentCard();
     devcard.building = {group: "", values: []};
     devcard.construction = {key: "", value: 0};
-    devcard.cardindex = this.cardIndex += 1;
+    devcard.cardindex = this.cards.length;//this.cardIndex += 1;
     devcard.calculations = new Calculations();
     this.cards.push(devcard);
+    this.cardIndex = devcard.cardindex;
   }
   removeCard(cards: Array<DevelopmentCard>, index: number) {
     let card = cards[this.cardIndex];
