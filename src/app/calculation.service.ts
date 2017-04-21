@@ -57,7 +57,7 @@ export class CalculationService {
     if (card.calculations.bldgPermit > 0) {
       percent = (card.building.group === 'R-3 Residential, one- and two-family') ? this.percents.plan.r3 : this.percents.plan.all;
       fee = card.calculations.bldgPermit * percent;
-      if (fee < this.minFee) {
+      if (fee < this.minFee || card.calculations.bldgPermit <= this.minFee) {
         fee = this.minFee;
       }
     }
@@ -70,7 +70,7 @@ export class CalculationService {
       percent = (card.building.group === 'R-3 Residential, one- and two-family') ? this.percents.elec.r3 : this.percents.elec.all;
       fee = card.calculations.bldgPermit * percent;
       console.log(percent);
-      if (fee < this.minFee) {
+      if (fee < this.minFee || card.calculations.bldgPermit <= this.minFee) {
         fee = this.minFee;
       }
     }
@@ -82,7 +82,7 @@ export class CalculationService {
     if (card.calculations.bldgPermit > 0) {
       percent = (card.building.group === 'R-3 Residential, one- and two-family') ? this.percents.plum.r3 : this.percents.plum.all;
       fee = card.calculations.bldgPermit * percent;
-      if (fee < this.minFee) {
+      if (fee < this.minFee || card.calculations.bldgPermit <= this.minFee) {
         fee = this.minFee;
       }   
     }
@@ -94,7 +94,7 @@ export class CalculationService {
     if (card.calculations.bldgPermit > 0) {
       percent = (card.building.group === 'R-3 Residential, one- and two-family') ? this.percents.mech.r3 : this.percents.mech.all;
       fee = card.calculations.bldgPermit * percent;
-      if (fee < this.minFee) {
+      if (fee < this.minFee || card.calculations.bldgPermit <= this.minFee) {
         fee = this.minFee;
       }          
     }
