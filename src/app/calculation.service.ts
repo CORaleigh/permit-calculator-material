@@ -26,8 +26,7 @@ export class CalculationService {
       if (card.calculations.valuation > 0) { 
         if (card.building.group && card.construction.value) {
           if (card.building.group === 'R-3 Residential, one- and two-family') {
-            debugger;
-            card.calculations.bldgPermit = card.calculations.valuation;//* 0.00261692324298379 * 0.888226389234951;
+            bldgPermit = card.calculations.valuation * this.percents.building.r3;//* 0.00261692324298379 * 0.888226389234951;
           } else {
             let i = 0;
             let tier = null;
@@ -70,6 +69,7 @@ export class CalculationService {
     if (card.calculations.bldgPermit > 0) {
       percent = (card.building.group === 'R-3 Residential, one- and two-family') ? this.percents.elec.r3 : this.percents.elec.all;
       fee = card.calculations.bldgPermit * percent;
+      console.log(percent);
       if (fee < this.minFee) {
         fee = this.minFee;
       }
