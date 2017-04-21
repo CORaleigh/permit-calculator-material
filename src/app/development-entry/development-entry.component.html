@@ -13,7 +13,7 @@
                 </md-select>
               </p>
               <p>
-                <md-select [disabled]="card.building.values.length === 0" placeholder="Contruction Type" [(ngModel)]="card.construction" name="construction" (ngModelChange)="calcValuation(card.construction.value, card)">
+                <md-select [disabled]="card.building.values.length === 0" placeholder="Construction Type" [(ngModel)]="card.construction" name="construction" (ngModelChange)="calcValuation(card.construction.value, card)">
                     <md-option *ngFor="let value of card.building.values" [value]="value">
                         {{value.key}}
                     </md-option>
