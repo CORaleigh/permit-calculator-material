@@ -34,10 +34,10 @@
             </form>
         </md-card-content>
         <md-card-actions style="margin:0 auto;">
-            <button md-icon-button (click)="getPreviousCard()" *ngIf="cards.length > 1 && cardIndex > 0"><md-icon>keyboard_arrow_left</md-icon></button>
-            <button md-button (click)="addCard()">ADD</button>
-            <button md-button (click)="removeCard(cards, i)" *ngIf="cards.length > 1">REMOVE</button>
-            <button md-icon-button (click)="getNextCard()" *ngIf="cards.length > 1 && cardIndex != cards.length - 1"><md-icon>keyboard_arrow_right</md-icon></button>
+            <button md-icon-button (click)="getPreviousCard()" *ngIf="cards.length > 1 && cardIndex > 0" mdTooltip="Previous Building Type"><md-icon>keyboard_arrow_left</md-icon></button>
+            <button md-button (click)="addCard()" mdTooltip="Add Building Type">ADD</button>
+            <button md-button (click)="removeCard(cards, i)" *ngIf="cards.length > 1" mdTooltip="Remove Building Type">REMOVE</button>
+            <button md-icon-button (click)="getNextCard()" *ngIf="cards.length > 1 && cardIndex != cards.length - 1" mdTooltip="Next Building Type"><md-icon>keyboard_arrow_right</md-icon></button>
         </md-card-actions>
     </md-card>
 </ng-container>
