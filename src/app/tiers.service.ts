@@ -13,19 +13,20 @@ export class TiersService {
   }
 
   setTiers(res: Response): Array<Tier> {
-    let multiplier = 0.00077944778071331;
-    let recovery = 1;
+    // let multiplier = 0.00077944778071331;
+    // let recovery = 1;
     let tiers = res.json();
-    tiers.forEach(function (tier, i) {
-        tier.costper = ((multiplier * 1000) * tier.percent) * recovery;
-        if (i === 0) {
-          tier.cumulative = (tier.max / 1000) * tier.costper;
-        } else if (i === tiers.length - 1){
-          tier.cumulative = null;
-        }else {
-          tier.cumulative = (((tier.max - tier.min) / 1000) * tier.costper) + tiers[i - 1]['cumulative'];
-        }
-    });
+    //tiers.forEach(function (tier, i) {
+       // tier.costper = ((multiplier * 1000) * tier.percent) * recovery;
+    //     if (i === 0) {
+    //       tier.cumulative = (tier.max / 1000) * tier.costper;
+    //     } else if (i === tiers.length - 1){
+    //       tier.cumulative = null;
+    //     }else {
+    //       tier.cumulative = (((tier.max - tier.min) / 1000) * tier.costper) + tiers[i - 1]['cumulative'];
+    //     }
+    //     console.log(tier);
+    // });
     return tiers;
   }
 }

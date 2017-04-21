@@ -1,9 +1,9 @@
-[{"tier": 1, "min": 0, "max": 150000, "percent": 0.78, "costper": 0, "cumulative": 0},
-{"tier": 2, "min": 150001, "max": 250000, "percent": 0.74, "costper": 0, "cumulative": 0},
-{"tier": 3, "min": 250001, "max": 500000, "percent": 0.72, "costper": 0, "cumulative": 0},
-{"tier": 4, "min": 500001, "max": 750000, "percent": 0.70, "costper": 0, "cumulative": 0},
-{"tier": 5, "min": 750001, "max": 1000000, "percent": 0.68, "costper": 0, "cumulative": 0},
-{"tier": 6, "min": 1000001, "max": 5000000, "percent": 0.62, "costper": 0, "cumulative": 0},
-{"tier": 7, "min": 5000001, "max": 15000000, "percent": 0.54, "costper": 0, "cumulative": 0},
-{"tier": 8, "min": 15000001, "max": 25000000, "percent": 0.47, "costper": 0, "cumulative": 0},
-{"tier": 9, "min": 25000001, "max": null, "percent": 0.39, "costper": 0, "cumulative": 0}]
+[{"tier": 1, "min": 0, "max": 150000, "costper": 0.78, "cumulative": 117},
+{"tier": 2, "min": 150001, "max": 250000, "costper": 0.74, "cumulative": 191},
+{"tier": 3, "min": 250001, "max": 500000, "costper": 0.72, "cumulative": 371},
+{"tier": 4, "min": 500001, "max": 750000, "costper": 0.70, "cumulative": 546},
+{"tier": 5, "min": 750001, "max": 1000000, "costper": 0.68, "cumulative": 716},
+{"tier": 6, "min": 1000001, "max": 5000000, "costper": 0.62, "cumulative": 3196},
+{"tier": 7, "min": 5000001, "max": 15000000, "costper": 0.54, "cumulative": 8596},
+{"tier": 8, "min": 15000001, "max": 25000000, "costper": 0.47, "cumulative": 13296},
+{"tier": 9, "min": 25000001, "max": null, "costper": 0.39, "cumulative": 0}]
