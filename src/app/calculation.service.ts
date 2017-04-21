@@ -27,7 +27,7 @@ export class CalculationService {
         if (card.building.group && card.construction.value) {
           if (card.building.group === 'R-3 Residential, one- and two-family') {
             debugger;
-            card.calculations.bldgPermit = card.calculations.valuation * 0.0026 * 0.888226389234951;//* 0.00261692324298379 * 0.888226389234951;
+            card.calculations.bldgPermit = card.calculations.valuation;//* 0.00261692324298379 * 0.888226389234951;
           } else {
             let i = 0;
             let tier = null;
