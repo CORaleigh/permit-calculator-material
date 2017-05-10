@@ -37,6 +37,7 @@ export class DevelopmentEntryComponent implements OnInit {
     devcard.building = {group: "", values: []};    
     devcard.construction = {key: "", value: 0};
     devcard.calculations = new Calculations();
+    devcard.constructScope = {name:"", percent: 0};
     this.cards = [devcard];
     this.selectedBuilding = {values:[]};
     this.selectedConstruction = {value: 0};
@@ -101,7 +102,9 @@ export class DevelopmentEntryComponent implements OnInit {
 
   buildingTypeChanged(card:DevelopmentCard) {
     let key = card.construction.key;
+    this.isResidential = false;
     if (card.building.group === "R-3 Residential, one- and two-family") {
+      card.calculations.isResidential = true;
       this.isResidential = true;
     }
     this.isResidentialUpdated.emit(this.isResidential);

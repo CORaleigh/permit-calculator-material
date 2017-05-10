@@ -23,10 +23,12 @@ export class CalculationService {
     if (building > 0) {
       fee.value = building * fee.commercial;
       if (isResidential) {
-        debugger;
         fee.value = building * fee.residential;
+        if (fee.waive) {
+          fee.value = 0;
+        }
       }
-      if (fee.value < this.minFee || building <= this.minFee) {
+      if ((fee.value < this.minFee || building <= this.minFee) && !fee.waive) {
         fee.value = this.minFee;
       }
     }
