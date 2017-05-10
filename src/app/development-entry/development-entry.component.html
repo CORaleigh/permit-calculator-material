@@ -1,13 +1,13 @@
 <ng-container *ngFor="let card of cards; let i = index">
     <md-card *ngIf="i === cardIndex" class="example-card">
         <md-card-header>
-            <md-card-title><h3>Building Type {{card.cardindex + 1}}</h3></md-card-title>
+            <md-card-title><h3>Building Occupancy {{card.cardindex + 1}}</h3></md-card-title>
         </md-card-header>
         <md-card-content>
             <form>
               <p>
                 <md-select placeholder="Building Type" [(ngModel)]="card.building" name="building" (ngModelChange)="buildingTypeChanged(card)">
-                    <md-option *ngFor="let building of iccbvd" [value]="building">
+                    <md-option *ngFor="let building of getBuildingTypes(iccbvd, isResidential, cards.length)" [value]="building">
                         {{building.group}}
                     </md-option>
                 </md-select>
@@ -35,9 +35,9 @@
         </md-card-content>
         <md-card-actions style="margin:0 auto;">
             <button md-icon-button (click)="getPreviousCard()" *ngIf="cards.length > 1 && cardIndex > 0" mdTooltip="Previous Building Type"><md-icon>keyboard_arrow_left</md-icon></button>
-            <button md-button (click)="addCard()" mdTooltip="Add Building Type">ADD</button>
+            <button md-icon-button (click)="getNextCard()" *ngIf="cards.length > 1 && cardIndex != cards.length - 1" mdTooltip="Next Building Type"><md-icon>keyboard_arrow_right</md-icon></button>            
+            <button md-button (click)="addCard()" mdTooltip="Add Building Type" *ngIf="card.building && card.construction && card.constructScope && card.squareFeet">ADD</button>
             <button md-button (click)="removeCard(cards, i)" *ngIf="cards.length > 1" mdTooltip="Remove Building Type">REMOVE</button>
-            <button md-icon-button (click)="getNextCard()" *ngIf="cards.length > 1 && cardIndex != cards.length - 1" mdTooltip="Next Building Type"><md-icon>keyboard_arrow_right</md-icon></button>
         </md-card-actions>
     </md-card>
 </ng-container>

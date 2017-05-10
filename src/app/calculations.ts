@@ -1,10 +1,14 @@
+import {Fee} from './fee';
+import {Tier} from './tier';
 export class Calculations {
+    isResidential: boolean = false;
     valuation: number = 0;
-    bldgPermit: number = 0;
-    reviewFee: number = 0;
-    elecPermit: number = 0;
-    plumPermit: number = 0;
-    mechPermit: number = 0;
-    totPermit: number = 0;
+    building: number = 0;
+    review: Fee;
+    electrical: Fee;
+    plumbing: Fee;
+    mechanical: Fee;
+    total: number = 0;
     perValuation: number = 0;
+    tiers: Array<Tier>;
 }

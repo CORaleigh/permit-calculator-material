@@ -6,6 +6,7 @@ import { Calculations } from '../calculations';
 import { TiersService } from '../tiers.service';
 import { Tier } from '../tier';
 import { CalculationService} from '../calculation.service';
+import { Fee } from '../fee';
 @Component({
   selector: 'calculator-output',
   inputs: ['cards', 'cardindex', 'calculations'],
@@ -27,97 +28,55 @@ export class CalculatorOutputComponent implements OnInit, Input, DoCheck {
   constructor(private differs: KeyValueDiffers, private tiersService: TiersService, private calculationService: CalculationService) {
     this.differ = differs.find({}).create(null);
   }
-  ngOnInit() { }
+  ngOnInit() { 
+    this.calculations = new Calculations();
+    this.calculations.valuation = 0;
+    this.calculations.building = 0;
+    this.calculations.electrical = new Fee(0, 1.01, 0.67);
+    this.calculations.review = new Fee(0, 0.55, 0.72);
+    this.calculations.plumbing = new Fee(0, 0.55, 0.22);
+    this.calculations.mechanical = new Fee(0, 0.78, 0.31); 
+    this.getTiers();  
+  }
+
+  getTiers() {
+    this.tiersService.getTiers().subscribe(
+      tiers => {this.tiers = tiers; this.calculations.tiers = tiers;},
+      err => {
+        console.log(err);
+      }
+    );
+  }
+
 
   sumValuation() {
     let valuation = 0;
     this.cards.forEach(function (card) { 
       valuation += card.calculations.valuation;
     });
-    this.calculations.valuation = 0;
+    //this.calculations.valuation = 0;
     this.calculations.valuation = valuation;
+    this.sumBldgPermit();
   }
   sumBldgPermit() {
     let bldgPermit = 0;
-    this.cards.forEach(function (card) { 
-      bldgPermit += card.calculations.bldgPermit;
+    this.calculationService.calcBldgPermit(this.calculations.valuation, this.calculations.tiers).then(building => {
+      this.calculations.building = building;
+      this.calculationService.calcFees(this.calculations).then(calculations => {
+        this.calculations = calculations;
+      });      
     });
-    this.calculations.bldgPermit = 0;
-    this.calculations.bldgPermit = bldgPermit;
   }
-  sumReviewFee() {
-    let reviewFee = 0;
-    this.cards.forEach(function (card) { 
-      reviewFee += card.calculations.reviewFee;
-    });
-    this.calculations.reviewFee = 0;
-    this.calculations.reviewFee = reviewFee;
-  }
-  sumElecPermit() {
-    let elecPermit = 0;
-    this.cards.forEach(function (card) { 
-      elecPermit += card.calculations.elecPermit;
-    });
-    this.calculations.elecPermit = 0;
-    this.calculations.elecPermit = elecPermit;
-  }  
-  sumPlumPermit() {
-    let plumPermit = 0;
-    this.cards.forEach(function (card) { 
-      plumPermit += card.calculations.plumPermit;
-    });
-    this.calculations.plumPermit = 0;
-    this.calculations.plumPermit = plumPermit;
-  }    
-  sumMechPermit() {
-    let mechPermit = 0;
-    this.cards.forEach(function (card) { 
-      mechPermit += card.calculations.mechPermit;
-    });
-    this.calculations.mechPermit = 0;
-    this.calculations.mechPermit = mechPermit;
-  }
-  sumTotPermit() {
-    let totPermit = 0;
-    this.cards.forEach(function (card) { 
-      totPermit += card.calculations.totPermit;
-    });
-    this.calculations.totPermit = 0;
-    this.calculations.totPermit = totPermit;
-  }    
+ 
   ngDoCheck() {
       var card = this.cards[this.cardindex];
 		  var changes = this.differ.diff(card.calculations);
       if (changes) {
         changes.forEachChangedItem(r => {
           if (r.key === 'valuation' && r.currentValue != r.previousValue && this.cardindex === card.cardindex) {
-            this.sumValuation();
-            this.sumBldgPermit();
-            this.sumReviewFee();                    
-            this.sumElecPermit(); 
-            this.sumPlumPermit();   
-            this.sumMechPermit(); 
-            this.calculationService.sumTotalPermit(this.cards).then(sum => this.calculations.totPermit = sum);                  
-          }
-          // if (r.key === 'bldgPermit' && r.currentValue != r.previousValue && this.cardindex === card.cardindex) {
-          //   this.sumBldgPermit();                    
-          // }    
-          // if (r.key === 'reviewFee' && r.currentValue != r.previousValue && this.cardindex === card.cardindex) {
-          //   this.sumReviewFee();                    
-          // }           
-          // if (r.key === 'elecPermit' && r.currentValue != r.previousValue && this.cardindex === card.cardindex) {
-          //   this.sumElecPermit();                    
-          // }    
-          // if (r.key === 'plumPermit' && r.currentValue != r.previousValue && this.cardindex === card.cardindex) {
-          //   this.sumPlumPermit();                    
-          // }
-          // if (r.key === 'mechPermit' && r.currentValue != r.previousValue && this.cardindex === card.cardindex) {
-          //   this.sumMechPermit();                    
-          // }
-          // if (r.key === 'totPermit' && r.currentValue != r.previousValue && this.cardindex === card.cardindex) {
-          //  // this.sumTotPermit();;
-          //   this.calculationService.sumTotalPermit(this.cards).then(sum => this.calculations.totPermit = sum);
-          // }                                                                    
+            this.calculations.isResidential = card.calculations.isResidential;
+            this.sumValuation();            
+          }                                                                 
         });
     }
   }
