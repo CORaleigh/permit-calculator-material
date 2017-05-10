@@ -65,6 +65,15 @@
                     --
                 </p>                   
             </md-list-item>
+            <md-list-item>
+                <h4 md-line>Technology Adder</h4>
+                <p md-line *ngIf="calculations.valuation > 0">
+                    {{(calculations.building + calculations.review.value + calculations.electrical.value + calculations.plumbing.value + calculations.mechanical.value) * 0.04 | currency:'USD':true:'1.0-0'}}
+                </p>
+                <p md-line *ngIf="calculations.valuation === 0">
+                    --
+                </p>                   
+            </md-list-item>            
         </md-list>
     </md-card-content>
     <md-card-actions style="margin:0 auto;">
