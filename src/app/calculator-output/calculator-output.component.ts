@@ -75,8 +75,10 @@ export class CalculatorOutputComponent implements OnInit, Input, DoCheck {
       this.calculations.review.waive = false;
         if (card.building.group.indexOf("R-3") > -1) {
           this.cards.forEach(item => {
-            if (!this.calculations.review.waive && item.constructScope.name.indexOf("Alteration") > -1) {
-              this.calculations.review.waive = true;
+            if (item.constructScope) {
+              if (!this.calculations.review.waive && item.constructScope.name.indexOf("Alteration") > -1) {
+                this.calculations.review.waive = true;
+              }
             }
           });
         }
