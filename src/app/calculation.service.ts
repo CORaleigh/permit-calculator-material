@@ -51,7 +51,7 @@ export class CalculationService {
           this.calcReviewFee(fee, cards, tiers);
         }
       }
-      if ((fee.value < this.minFee || building <= this.minFee)) {
+      if ((fee.value < this.minFee || building <= this.minFee) && fee.name != "Plan Review") {
         fee.value = this.minFee;
       }
     }
