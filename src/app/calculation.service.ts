@@ -3,10 +3,12 @@ import { DevelopmentCard } from './development-card';
 import { Tier } from './tier';
 import { Fee } from './fee';
 import { Calculations } from './calculations';
+import { TiersService } from './tiers.service';
 @Injectable()
 export class CalculationService {
   valuation: number;
   minFee: number = 106;
+  tiersService:TiersService;
     constructor() { }
 
   calcValuation(card: DevelopmentCard): Promise<number>{
@@ -18,17 +20,38 @@ export class CalculationService {
     return Promise.resolve(valuation);
   }
 
-  getFees(building: number, isResidential: boolean, fee: Fee): Fee{
+  calcReviewFee(fee: Fee, cards: Array<DevelopmentCard>, tiers: Array<Tier>) {
+    return new Promise(resolve => {
+      let valuation = 0;
+      fee.value = 0;
+      cards.forEach(card => {
+        if (card.constructScope.name.indexOf("Alteration") < 0) {
+          valuation += card.calculations.valuation;
+        }
+      });
+      if (valuation === 0) {
+        resolve(fee);
+      } else {
+        this.calcBldgPermit(valuation, tiers).then(building => {
+          fee.value = building * fee.residential;
+          resolve(fee);
+        });
+      }
+    });
+
+  }
+
+  getFees(building: number, isResidential: boolean, fee: Fee, cards?: Array<DevelopmentCard>, tiers?: Array<Tier>): Fee{
     fee.value = 0;
     if (building > 0) {
       fee.value = building * fee.commercial;
       if (isResidential) {
         fee.value = building * fee.residential;
-        if (fee.waive) {
-          fee.value = 0;
+        if (fee.name === "Plan Review") {
+          this.calcReviewFee(fee, cards, tiers);
         }
       }
-      if ((fee.value < this.minFee || building <= this.minFee) && !fee.waive) {
+      if ((fee.value < this.minFee || building <= this.minFee)) {
         fee.value = this.minFee;
       }
     }
@@ -37,9 +60,9 @@ export class CalculationService {
 
 
 
-  calcFees(calculations: Calculations): Promise<Calculations> {
+  calcFees(calculations: Calculations, cards: Array<DevelopmentCard>, tiers: Array<Tier>): Promise<Calculations> {
     if (calculations.building > 0) {
-      calculations.review = this.getFees(calculations.building, calculations.isResidential, calculations.review);
+      calculations.review = this.getFees(calculations.building, calculations.isResidential, calculations.review, cards, tiers);
       calculations.electrical = this.getFees(calculations.building, calculations.isResidential, calculations.electrical);
       calculations.mechanical = this.getFees(calculations.building, calculations.isResidential, calculations.mechanical);
       calculations.plumbing = this.getFees(calculations.building, calculations.isResidential, calculations.plumbing);

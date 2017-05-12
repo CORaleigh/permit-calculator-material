@@ -61,7 +61,7 @@ export class CalculatorOutputComponent implements OnInit, Input, DoCheck {
     let bldgPermit = 0;
     this.calculationService.calcBldgPermit(this.calculations.valuation, this.calculations.tiers).then(building => {
       this.calculations.building = building;
-      this.calculationService.calcFees(this.calculations).then(calculations => {
+      this.calculationService.calcFees(this.calculations, this.cards, this.tiers).then(calculations => {
         this.calculations = calculations;
       });      
     });
@@ -69,22 +69,10 @@ export class CalculatorOutputComponent implements OnInit, Input, DoCheck {
  
   ngDoCheck() {
     var card = this.cards[this.cardindex];
-    var cardCalcChanges = this.differCalc.diff(card.calculations);
-    var cardChanges = this.differCard.diff(card);
-    if (cardChanges) {
-      this.calculations.review.waive = false;
-        if (card.building.group.indexOf("R-3") > -1) {
-          this.cards.forEach(item => {
-            if (item.constructScope) {
-              if (!this.calculations.review.waive && item.constructScope.name.indexOf("Alteration") > -1) {
-                this.calculations.review.waive = true;
-              }
-            }
-          });
-        }
-    }
-    if (cardCalcChanges) {
-      cardCalcChanges.forEachChangedItem(r => {
+    var calcChanges = this.differCalc.diff(card.calculations);
+
+    if (calcChanges) {
+      calcChanges.forEachChangedItem(r => {
         console.log(r.key);
         if ((r.key === 'valuation') && r.currentValue != r.previousValue && r.currentValue > 0 && this.cardindex === card.cardindex) {
           this.calculations.isResidential = card.calculations.isResidential;
