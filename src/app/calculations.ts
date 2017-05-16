@@ -10,5 +10,6 @@ export class Calculations {
     mechanical: Fee;
     total: number = 0;
     perValuation: number = 0;
+    tech: number = 0;
     tiers: Array<Tier>;
 }

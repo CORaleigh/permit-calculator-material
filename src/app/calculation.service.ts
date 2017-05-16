@@ -32,8 +32,9 @@ export class CalculationService {
       if (valuation === 0) {
         resolve(fee);
       } else {
-        this.calcBldgPermit(valuation, tiers).then(building => {
-          fee.value = building * fee.residential;
+        this.calcBldgPermit(valuation, tiers, true).then(building => {
+          fee.value = Math.round(building * fee.residential);
+          fee.tech = this.calcTechFee(fee.value);
           resolve(fee);
         });
       }
@@ -55,6 +56,8 @@ export class CalculationService {
         fee.value = this.minFee;
       }
     }
+    fee.tech = this.calcTechFee(fee.value);
+    fee.value = Math.round(fee.value);
     return fee;
   }
 
@@ -70,11 +73,11 @@ export class CalculationService {
     return Promise.resolve(calculations);
   }
 
-  calcBldgPermit(valuation: number, tiers: Array<Tier>): Promise<number> {
+  calcBldgPermit(valuation: number, tiers: Array<Tier>, isResidential: boolean): Promise<number> {
     let costper = 0;
     let bldgPermit = 0;
     var BreakException = {};
-    if (valuation > 0) {
+    if (valuation > 0 && !isResidential) {
       let i = 0;
       let tier = null;
           for (; i < tiers.length; i++) {
@@ -89,9 +92,16 @@ export class CalculationService {
             }
           }      
     }   
+    if (isResidential) {
+      bldgPermit = valuation * 0.0026;
+    }
     if (bldgPermit < this.minFee) {
       bldgPermit = this.minFee;
-    }  
+    }
     return Promise.resolve(bldgPermit);
+  }
+
+  calcTechFee(fee: number) : number {
+    return Math.round(Math.round(fee) * 0.04);
   }
 }

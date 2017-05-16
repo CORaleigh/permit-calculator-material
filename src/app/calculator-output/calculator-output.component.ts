@@ -57,10 +57,14 @@ export class CalculatorOutputComponent implements OnInit, Input, DoCheck {
   }
   sumBldgPermit() {
     let bldgPermit = 0;
-    this.calculationService.calcBldgPermit(this.calculations.valuation, this.calculations.tiers).then(building => {
+    debugger;
+    this.calculationService.calcBldgPermit(this.calculations.valuation, this.calculations.tiers, this.calculations.isResidential).then(building => {
       this.calculations.building = building;
+      this.calculations.tech = Math.round(Math.round(building) * 0.04);
+     // this.calculations = this.calcTechAdder(this.calculations);
       this.calculationService.calcFees(this.calculations, this.cards, this.tiers).then(calculations => {
         this.calculations = calculations;
+        this.calculations.building = Math.round(this.calculations.building);
       });      
     });
   }
@@ -78,6 +82,12 @@ export class CalculatorOutputComponent implements OnInit, Input, DoCheck {
         }                                                                 
       });
     }
-
   }
+
+
+  // calcTechAdder(calculations: Calculations) : Calculations {
+  //   calculations.techFee = calculations.building * 0.04;
+  //   calculations.building += calculations.techFee;
+  //   return calculations;
+  // }
 }
