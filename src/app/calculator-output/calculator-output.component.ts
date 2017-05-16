@@ -31,7 +31,7 @@ export class CalculatorOutputComponent implements OnInit, Input, DoCheck {
   ngOnInit() { 
     this.calculations = new Calculations();
     this.calculations.valuation = 0;
-    this.calculations.building = 0;
+    this.calculations.building = new Fee("Building", 0, 0, 0.0026);
     this.calculations.electrical = new Fee("Electrical", 0, 1.01, 0.67);
     this.calculations.review = new Fee("Plan Review", 0, 0.55, 0.72);
     this.calculations.plumbing = new Fee("Plumbing", 0, 0.55, 0.22);
@@ -59,12 +59,12 @@ export class CalculatorOutputComponent implements OnInit, Input, DoCheck {
     let bldgPermit = 0;
     debugger;
     this.calculationService.calcBldgPermit(this.calculations.valuation, this.calculations.tiers, this.calculations.isResidential).then(building => {
-      this.calculations.building = building;
-      this.calculations.tech = Math.round(Math.round(building) * 0.04);
+      this.calculations.building.value = building;
+      this.calculations.building.tech = Math.round(Math.round(building) * 0.04);
      // this.calculations = this.calcTechAdder(this.calculations);
       this.calculationService.calcFees(this.calculations, this.cards, this.tiers).then(calculations => {
         this.calculations = calculations;
-        this.calculations.building = Math.round(this.calculations.building);
+        this.calculations.building.value = Math.round(this.calculations.building.value);
       });      
     });
   }

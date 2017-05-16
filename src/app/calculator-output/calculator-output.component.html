@@ -16,10 +16,10 @@
             <md-list-item>
                 <h3 md-line>Building Permit</h3>
                 <p md-line *ngIf="calculations.valuation > 0">
-                    {{calculations.building + calculations.tech | currency:'USD':true:'1.0-0'}}
+                    {{calculations.building.value + calculations.building.tech | currency:'USD':true:'1.0-0'}}
                 </p>
                 <p md-line *ngIf="calculations.valuation > 0">
-                    <small><em>({{calculations.building | currency:'USD':true:'1.0-0'}} + {{calculations.tech | currency:'USD':true:'1.0-0'}} Technology Fee)</em></small>
+                    <small><em>({{calculations.building.value | currency:'USD':true:'1.0-0'}} + {{calculations.tech | currency:'USD':true:'1.0-0'}} Technology Fee)</em></small>
                 </p>                     
                 <p md-line *ngIf="calculations.valuation === 0">
                     --
@@ -76,7 +76,7 @@
             <md-list-item class="total">
                 <h3 md-line>Total Permit</h3>
                 <p md-line *ngIf="calculations.valuation > 0">
-                    <strong>{{(calculations.building + calculations.tech) + (calculations.review.value + calculations.review.tech) + (calculations.electrical.value + calculations.electrical.tech) + (calculations.plumbing.value + calculations.plumbing.tech) + (calculations.mechanical.value + calculations.mechanical.tech) | currency:'USD':true:'1.0-0'}}</strong>
+                    <strong>{{(calculations.building.value + calculations.building.tech) + (calculations.review.value + calculations.review.tech) + (calculations.electrical.value + calculations.electrical.tech) + (calculations.plumbing.value + calculations.plumbing.tech) + (calculations.mechanical.value + calculations.mechanical.tech) | currency:'USD':true:'1.0-0'}}</strong>
                 </p>
                 <p md-line *ngIf="calculations.valuation === 0">
                     --

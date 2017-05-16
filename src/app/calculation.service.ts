@@ -64,11 +64,11 @@ export class CalculationService {
 
 
   calcFees(calculations: Calculations, cards: Array<DevelopmentCard>, tiers: Array<Tier>): Promise<Calculations> {
-    if (calculations.building > 0) {
-      calculations.review = this.getFees(calculations.building, calculations.isResidential, calculations.review, cards, tiers);
-      calculations.electrical = this.getFees(calculations.building, calculations.isResidential, calculations.electrical);
-      calculations.mechanical = this.getFees(calculations.building, calculations.isResidential, calculations.mechanical);
-      calculations.plumbing = this.getFees(calculations.building, calculations.isResidential, calculations.plumbing);
+    if (calculations.building.value > 0) {
+      calculations.review = this.getFees(calculations.building.value, calculations.isResidential, calculations.review, cards, tiers);
+      calculations.electrical = this.getFees(calculations.building.value, calculations.isResidential, calculations.electrical);
+      calculations.mechanical = this.getFees(calculations.building.value, calculations.isResidential, calculations.mechanical);
+      calculations.plumbing = this.getFees(calculations.building.value, calculations.isResidential, calculations.plumbing);
     }
     return Promise.resolve(calculations);
   }
