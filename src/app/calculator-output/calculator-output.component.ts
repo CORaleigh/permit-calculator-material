@@ -19,16 +19,14 @@ export class CalculatorOutputComponent implements OnInit, Input, DoCheck {
   cards: Array<DevelopmentCard>;
   cardindex: number;
   @Input() card: DevelopmentCard;
-  differCalc: any;
-  differCard: any;
+  differ: any;
   bldgPermit: number;
   reviewFee: number;
   elecPermit: number;
   tiers: Array<Tier>;
 
   constructor(private differs: KeyValueDiffers, private tiersService: TiersService, private calculationService: CalculationService) {
-    this.differCalc = differs.find({}).create(null);
-    this.differCard = differs.find({}).create(null);    
+    this.differ = differs.find({}).create(null);
   }
   ngOnInit() { 
     this.calculations = new Calculations();
@@ -68,11 +66,11 @@ export class CalculatorOutputComponent implements OnInit, Input, DoCheck {
   }
  
   ngDoCheck() {
-    var card = this.cards[this.cardindex];
-    var calcChanges = this.differCalc.diff(card.calculations);
+    let card = this.cards[this.cardindex];
+    let changes = this.differ.diff(card.calculations);
 
-    if (calcChanges) {
-      calcChanges.forEachChangedItem(r => {
+    if (changes) {
+      changes.forEachChangedItem(r => {
         console.log(r.key);
         if ((r.key === 'valuation') && r.currentValue != r.previousValue && r.currentValue > 0 && this.cardindex === card.cardindex) {
           this.calculations.isResidential = card.calculations.isResidential;
