@@ -19,7 +19,7 @@
                     {{calculations.building.value + calculations.building.tech | currency:'USD':true:'1.0-0'}}
                 </p>
                 <p md-line *ngIf="calculations.valuation > 0">
-                    <small><em>({{calculations.building.value | currency:'USD':true:'1.0-0'}} + {{calculations.tech | currency:'USD':true:'1.0-0'}} Technology Fee)</em></small>
+                    <small><em>({{calculations.building.value | currency:'USD':true:'1.0-0'}} + {{calculations.building.tech | currency:'USD':true:'1.0-0'}} Technology Fee)</em></small>
                 </p>                     
                 <p md-line *ngIf="calculations.valuation === 0">
                     --
