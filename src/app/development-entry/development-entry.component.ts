@@ -106,6 +106,8 @@ export class DevelopmentEntryComponent implements OnInit {
     if (card.building.group === "R-3 Residential, one- and two-family") {
       card.calculations.isResidential = true;
       this.isResidential = true;
+    } else {
+      card.calculations.isResidential = false;
     }
     this.isResidentialUpdated.emit(this.isResidential);
     let timeoutId = setTimeout(() => {  
