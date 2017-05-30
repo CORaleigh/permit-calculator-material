@@ -9,12 +9,16 @@ import { AppComponent } from './app.component';
 import { DevelopmentEntryComponent } from './development-entry/development-entry.component';
 import { CalculatorOutputComponent } from './calculator-output/calculator-output.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { BuildingTypePipe } from './building-type.pipe';
+import { ConstructionTypePipe } from './construction-type.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     DevelopmentEntryComponent,
-    CalculatorOutputComponent
+    CalculatorOutputComponent,
+    BuildingTypePipe,
+    ConstructionTypePipe
   ],
   imports: [
     BrowserModule,

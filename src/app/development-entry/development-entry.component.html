@@ -7,14 +7,14 @@
             <form>
               <p>
                 <md-select placeholder="Building Type" [(ngModel)]="card.building" name="building" (ngModelChange)="buildingTypeChanged(card)">
-                    <md-option *ngFor="let building of getBuildingTypes(iccbvd, isResidential, cards.length)" [value]="building">
+                    <md-option *ngFor="let building of getBuildingTypes(iccbvd, isResidential, cards.length, card.construction.key) | buildingType: card.construction.key" [value]="building">
                         {{building.group}}
                     </md-option>
                 </md-select>
               </p>
               <p>
                 <md-select [disabled]="card.building.values.length === 0" placeholder="Construction Type" [(ngModel)]="card.construction" name="construction" (ngModelChange)="calcValuation(card.construction.value, card)">
-                    <md-option *ngFor="let value of card.building.values" [value]="value">
+                    <md-option *ngFor="let value of card.building.values | constructionType: value" [value]="value">
                         {{value.key}}
                     </md-option>
                 </md-select>

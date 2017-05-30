@@ -8,6 +8,7 @@ import { TiersService } from '../tiers.service';
 import { Tier } from '../tier';
 import { Calculations } from '../calculations';
 import { Fee } from '../fee';
+import { ConstructionType } from '../construction-type';
 
 @Component({
   selector: 'development-entry',
@@ -61,8 +62,25 @@ export class DevelopmentEntryComponent implements OnInit {
     );
   }
 
-  getBuildingTypes(buildings: Array<Iccbvd>, isResidential: boolean, numCards: number) : Array<Iccbvd>{
+  checkConstructionPermitted(buildings: Array<Iccbvd>, construction: string) : Array<Iccbvd>{
+    if (buildings) {
+      buildings.forEach((building, index) => {
+        if ((construction === 'IIIB' || construction === 'VB') && building.group.indexOf('I-2') > -1) {
+          buildings.splice(index, 1);
+        }
+      });
+      return buildings;
+    } else {
+      return null;
+    }
+
+  }
+
+
+
+  getBuildingTypes(buildings: Array<Iccbvd>, isResidential: boolean, numCards: number, construction: string) : Array<Iccbvd>{
     let types = new Array<Iccbvd>();
+    //this.checkConstructionPermitted(buildings, construction);
     if (numCards <= 1) {
       types = buildings;
     } else {
