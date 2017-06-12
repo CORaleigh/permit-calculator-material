@@ -42,7 +42,7 @@ export class DevelopmentEntryComponent implements OnInit {
     this.cards = [devcard];
     this.selectedBuilding = {values:[]};
     this.selectedConstruction = {value: 0};
-    this.scopes = [{name: 'New Construction', percent: 1}, {name: 'Level 1 Alteration', percent: 0.25}, {name: 'Level 2 Alteration', percent: 0.5}, {name: 'Level 3 Alteration', percent: 0.75}];
+    this.scopes = [{name: 'New Construction', percent: 1}, {name: 'Level 1 Alteration', percent: 0.25}, {name: 'Level 2 Alteration', percent: 0.5}, {name: 'Level 3 Alteration', percent: 0.75}, {name: 'Addition', percent: 1}];
     this.getIccbvd();
   }
   

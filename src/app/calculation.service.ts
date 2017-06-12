@@ -25,7 +25,8 @@ export class CalculationService {
       let valuation = 0;
       fee.value = 0;
       cards.forEach(card => {
-        if (card.constructScope.name.indexOf("Alteration") < 0) {
+        
+        if (card.constructScope.name === 'New Construction') {
           valuation += card.calculations.valuation;
         }
       });

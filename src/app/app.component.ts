@@ -8,7 +8,7 @@ export class AppComponent {
   isResidential: boolean = false;
   title = 'Permit Calculator';
   handleIsResidentialUpdated(isResidential) {
-    debugger;
+    
     this.isResidential = isResidential;
   }
 }

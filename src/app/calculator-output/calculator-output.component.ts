@@ -20,6 +20,7 @@ export class CalculatorOutputComponent implements OnInit, Input, DoCheck {
   cardindex: number;
   @Input() card: DevelopmentCard;
   differ: any;
+  cardDiffer: any;
   bldgPermit: number;
   reviewFee: number;
   elecPermit: number;
@@ -27,6 +28,7 @@ export class CalculatorOutputComponent implements OnInit, Input, DoCheck {
 
   constructor(private differs: KeyValueDiffers, private tiersService: TiersService, private calculationService: CalculationService) {
     this.differ = differs.find({}).create(null);
+    this.cardDiffer = differs.find({}).create(null);
   }
   ngOnInit() { 
     this.calculations = new Calculations();
@@ -57,7 +59,7 @@ export class CalculatorOutputComponent implements OnInit, Input, DoCheck {
   }
   sumBldgPermit() {
     let bldgPermit = 0;
-    debugger;
+    
     this.calculationService.calcBldgPermit(this.calculations.valuation, this.calculations.tiers, this.calculations.isResidential).then(building => {
       this.calculations.building.value = building;
       this.calculations.building.tech = Math.round(Math.round(building) * 0.04);
@@ -75,13 +77,26 @@ export class CalculatorOutputComponent implements OnInit, Input, DoCheck {
 
     if (changes) {
       changes.forEachChangedItem(r => {
-        console.log(r.key);
         if ((r.key === 'valuation') && r.currentValue != r.previousValue && r.currentValue > 0 && this.cardindex === card.cardindex) {
           this.calculations.isResidential = card.calculations.isResidential;
           this.sumValuation();            
         }                                                                 
       });
     }
+    //added to determine change of R-3 construction scope from New Construction to Alteration since valuation does not change
+    if (card.building.group.indexOf('R-3') > -1) {
+      console.log('test');
+      let cardChanges = this.cardDiffer.diff(card);
+      if (cardChanges) {
+        cardChanges.forEachChangedItem(r => {
+          if ((r.key === 'constructScope') && ((r.currentValue.name  === 'Addition' && r.previousValue.name  === 'New Construction') || (r.currentValue.name  === 'New Constuction' && r.previousValue.name === 'Addition'))){
+            this.calculations.isResidential = card.calculations.isResidential;
+            this.sumValuation();             
+          }
+        });
+      }
+    }
+
   }
 
 
