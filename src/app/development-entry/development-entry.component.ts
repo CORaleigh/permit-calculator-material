@@ -106,7 +106,17 @@ export class DevelopmentEntryComponent implements OnInit {
   }
   removeCard(cards: Array<DevelopmentCard>, index: number) {
     let card = cards[this.cardIndex];
-    cards.splice(index, 1);
+    if (this.cardIndex === 0) {
+      cards.shift();
+      this.cardIndex += 1;
+      cards.forEach(card => {
+        card.cardindex -= 1;
+      });
+    } else {
+      cards.splice(index, 1);
+      this.cardIndex -= 1;
+    }
+    
     this.cardIndex -= 1;
   }  
 

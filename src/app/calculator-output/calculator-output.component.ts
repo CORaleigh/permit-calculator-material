@@ -89,7 +89,7 @@ export class CalculatorOutputComponent implements OnInit, Input, DoCheck {
       let cardChanges = this.cardDiffer.diff(card);
       if (cardChanges) {
         cardChanges.forEachChangedItem(r => {
-          if ((r.key === 'constructScope') && ((r.currentValue.name  === 'Addition' && r.previousValue.name  === 'New Construction') || (r.currentValue.name  === 'New Constuction' && r.previousValue.name === 'Addition'))){
+          if ((r.key === 'constructScope') && ((r.currentValue.name  === 'Addition' && r.previousValue.name  === 'New Construction') || (r.currentValue.name  === 'New Construction' && r.previousValue.name === 'Addition'))){
             this.calculations.isResidential = card.calculations.isResidential;
             this.sumValuation();             
           }
