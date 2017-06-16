@@ -11,6 +11,7 @@ import { Fee } from '../fee';
 import { ConstructionType } from '../construction-type';
 import { MdDialog } from '@angular/material';
 import { HelpDialogComponent } from '../help-dialog/help-dialog.component';
+import { FlexLayoutModule } from '@angular/flex-layout';
 @Component({
   selector: 'development-entry',
   templateUrl: './development-entry.component.html',

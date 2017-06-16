@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { MaterialModule } from '@angular/material';
 import { CommonModule } from '@angular/common';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 import { AppComponent } from './app.component';
 import { DevelopmentEntryComponent } from './development-entry/development-entry.component';
@@ -30,7 +31,8 @@ import { HelpDialogComponent } from './help-dialog/help-dialog.component';
     HttpModule,
     MaterialModule,
     CommonModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    FlexLayoutModule
   ],
   entryComponents: [SplashDialogComponent, HelpDialogComponent],
   providers: [],
