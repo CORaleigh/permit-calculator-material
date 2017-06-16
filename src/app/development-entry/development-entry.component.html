@@ -1,7 +1,8 @@
-<ng-container *ngFor="let card of cards; let i = index">
+<ng-container *ngFor="let card of cards; let i = index" fxFlex="50%">
     <md-card *ngIf="i === cardIndex" class="example-card">
         <md-card-header>
             <md-card-title><h3>Building Occupancy {{card.cardindex + 1}}</h3></md-card-title>
+            <button md-button (click)="showHelp()">Help</button>
         </md-card-header>
         <md-card-content>
             <form>
@@ -41,4 +42,4 @@
         </md-card-actions>
     </md-card>
 </ng-container>
-<calculator-output [cards]="cards" [cardindex]="cardIndex" [calculations]="calculations"></calculator-output>
+<calculator-output fxFlex="50%" [cards]="cards" [cardindex]="cardIndex" [calculations]="calculations"></calculator-output>

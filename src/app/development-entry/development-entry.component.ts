@@ -9,7 +9,8 @@ import { Tier } from '../tier';
 import { Calculations } from '../calculations';
 import { Fee } from '../fee';
 import { ConstructionType } from '../construction-type';
-
+import { MdDialog } from '@angular/material';
+import { HelpDialogComponent } from '../help-dialog/help-dialog.component';
 @Component({
   selector: 'development-entry',
   templateUrl: './development-entry.component.html',
@@ -30,7 +31,7 @@ export class DevelopmentEntryComponent implements OnInit {
   calculations: Calculations;
   @Input() isResidential: boolean;
   @Output() isResidentialUpdated = new EventEmitter<boolean>();
-  constructor(private iccbvdService: IccbvdService, private calculationService: CalculationService, private tiersService: TiersService) { }
+  constructor(private iccbvdService: IccbvdService, private calculationService: CalculationService, private tiersService: TiersService, public dialog: MdDialog) { }
   ngOnInit() {
     this.cardIndex = 0;
     let devcard = new DevelopmentCard();
@@ -45,7 +46,10 @@ export class DevelopmentEntryComponent implements OnInit {
     this.scopes = [{name: 'New Construction', percent: 1}, {name: 'Level 1 Alteration', percent: 0.25}, {name: 'Level 2 Alteration', percent: 0.5}, {name: 'Level 3 Alteration', percent: 0.75}, {name: 'Addition', percent: 1}];
     this.getIccbvd();
   }
-  
+showHelp() {
+  this.dialog.open(HelpDialogComponent);
+}
+ 
  calcValuation(value: any, card: DevelopmentCard) {
     this.calculationService.calcValuation(card).then(
       valuation => {
@@ -73,6 +77,7 @@ export class DevelopmentEntryComponent implements OnInit {
     } else {
       return null;
     }
+
 
   }
 

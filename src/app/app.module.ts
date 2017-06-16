@@ -11,6 +11,8 @@ import { CalculatorOutputComponent } from './calculator-output/calculator-output
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { BuildingTypePipe } from './building-type.pipe';
 import { ConstructionTypePipe } from './construction-type.pipe';
+import { SplashDialogComponent } from './splash-dialog/splash-dialog.component';
+import { HelpDialogComponent } from './help-dialog/help-dialog.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { ConstructionTypePipe } from './construction-type.pipe';
     DevelopmentEntryComponent,
     CalculatorOutputComponent,
     BuildingTypePipe,
-    ConstructionTypePipe
+    ConstructionTypePipe,
+    SplashDialogComponent,
+    HelpDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -28,6 +32,7 @@ import { ConstructionTypePipe } from './construction-type.pipe';
     CommonModule,
     BrowserAnimationsModule
   ],
+  entryComponents: [SplashDialogComponent, HelpDialogComponent],
   providers: [],
   bootstrap: [AppComponent]
 })
