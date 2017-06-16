@@ -1,8 +1,9 @@
-<div fxLayout="column" fxLayout.md="row">
+<div fxLayout="column" fxLayout.gt-xs="row">
 <div fxFlex="50%"><ng-container *ngFor="let card of cards; let i = index">
     <md-card *ngIf="i === cardIndex" class="example-card">
-        <md-card-header>
+        <md-card-header class="wrap">
             <md-card-title><h3>Building Occupancy {{card.cardindex + 1}}</h3></md-card-title>
+            <button md-button (click)="showHelp()">Help</button>
         </md-card-header>
         <md-card-content>
             <form>
