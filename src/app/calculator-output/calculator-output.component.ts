@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, DoCheck, KeyValueDiffers} from '@angular/core';
+import { Component, OnInit, Input, DoCheck, KeyValueDiffers, OnDestroy, HostListener} from '@angular/core';
 import { DevelopmentCard } from '../development-card';
 import { Observable } from 'rxjs/Observable';
 import { FormControl } from '@angular/forms';  
@@ -7,6 +7,8 @@ import { TiersService } from '../tiers.service';
 import { Tier } from '../tier';
 import { CalculationService} from '../calculation.service';
 import { Fee } from '../fee';
+import { CanDeactivate } from '@angular/router';
+declare let ga: Function;
 @Component({
   selector: 'calculator-output',
   inputs: ['cards', 'cardindex', 'calculations'],
@@ -14,6 +16,7 @@ import { Fee } from '../fee';
   styleUrls: ['./calculator-output.component.css'],
   providers: [TiersService, CalculationService]
 })
+
 export class CalculatorOutputComponent implements OnInit, Input, DoCheck {
   calculations: Calculations;
   cards: Array<DevelopmentCard>;
@@ -25,12 +28,13 @@ export class CalculatorOutputComponent implements OnInit, Input, DoCheck {
   reviewFee: number;
   elecPermit: number;
   tiers: Array<Tier>;
-
+  
   constructor(private differs: KeyValueDiffers, private tiersService: TiersService, private calculationService: CalculationService) {
     this.differ = differs.find({}).create(null);
     this.cardDiffer = differs.find({}).create(null);
   }
   ngOnInit() { 
+
     this.calculations = new Calculations();
     this.calculations.valuation = 0;
     this.calculations.building = new Fee("Building", 0, 0, 0.0026);
@@ -40,6 +44,26 @@ export class CalculatorOutputComponent implements OnInit, Input, DoCheck {
     this.calculations.mechanical = new Fee("Mechanical", 0, 0.78, 0.31); 
     this.getTiers();  
   }
+@HostListener('window:beforeunload', ['$event'])
+beforeunloadHandler(event) {
+  if (this.calculations.valuation > 0) {
+    this.cards.forEach(card => {
+      ga('send', 'event', 'Parameters', 'Building Type', card.building.group);
+      ga('send', 'event', 'Parameters', 'Construction Type', card.construction.key);
+      ga('send', 'event', 'Parameters', 'Construction Scope', card.constructScope);
+      ga('send', 'event', 'Parameters', 'Square Feet', card.squareFeet);
+    });
+    ga('send', 'event', 'Calculations', 'Total Valuation', this.calculations.valuation);
+    ga('send', 'event', 'Calculations', 'Total Building Fee', this.calculations.building);
+    ga('send', 'event', 'Calculations', 'Total Electrical Fee', this.calculations.electrical);
+    ga('send', 'event', 'Calculations', 'Total Mechanical Fee', this.calculations.mechanical);
+    ga('send', 'event', 'Calculations', 'Total Plumbing Fee', this.calculations.plumbing);
+    ga('send', 'event', 'Calculations', 'Total Review Fee', this.calculations.review);
+    ga('send', 'event', 'Calculations', 'Total Permit Fee', this.calculations.total);    
+  }
+
+}
+
 
   getTiers() {
     this.tiersService.getTiers().subscribe(

@@ -12,6 +12,7 @@ import { ConstructionType } from '../construction-type';
 import { MdDialog } from '@angular/material';
 import { HelpDialogComponent } from '../help-dialog/help-dialog.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
+
 @Component({
   selector: 'development-entry',
   templateUrl: './development-entry.component.html',
@@ -112,9 +113,10 @@ showHelp() {
   }
   removeCard(cards: Array<DevelopmentCard>, index: number) {
     let card = cards[this.cardIndex];
+    debugger;
     if (this.cardIndex === 0) {
       cards.shift();
-      this.cardIndex += 1;
+      this.cardIndex = 0;
       cards.forEach(card => {
         card.cardindex -= 1;
       });
@@ -122,8 +124,6 @@ showHelp() {
       cards.splice(index, 1);
       this.cardIndex -= 1;
     }
-    
-    this.cardIndex -= 1;
   }  
 
   getPreviousCard() {
