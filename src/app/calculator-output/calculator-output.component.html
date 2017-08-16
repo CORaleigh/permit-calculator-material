@@ -85,6 +85,7 @@
 *<small><em> only represents Building and Trade permit fees</em></small>
 
         </md-list>
+        <button md-raised-button primary [disabled]="cards.length === 1 && (cards[0].building.group.length < 1 || cards[0].construction.key.length < 1 || cards[0].constructScope.name.length < 1 || !cards[0].squareFeet)" (click)="exportPdf()">Export PDF</button>
     </md-card-content>
     <md-card-actions style="margin:0 auto;">
 
