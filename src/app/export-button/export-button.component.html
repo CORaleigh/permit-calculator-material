@@ -1,0 +1,2 @@
+<button md-button [disabled]="cards.length === 1 && (cards[0].building.group.length < 1 || cards[0].construction.key.length < 1 || cards[0].constructScope.name.length < 1 || !cards[0].squareFeet)"
+  (click)="exportPdf()">Export PDF</button>

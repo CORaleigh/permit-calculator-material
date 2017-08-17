@@ -31,6 +31,7 @@ export class DevelopmentEntryComponent implements OnInit {
   cardIndex: number;
   tiers: Array<Tier>;
   calculations: Calculations;
+  project: any = {name: '', address: ''};
   @Input() isResidential: boolean;
   @Output() isResidentialUpdated = new EventEmitter<boolean>();
   constructor(private iccbvdService: IccbvdService, private calculationService: CalculationService, private tiersService: TiersService, public dialog: MdDialog) { }

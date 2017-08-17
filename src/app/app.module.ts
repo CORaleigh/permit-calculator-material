@@ -14,6 +14,7 @@ import { BuildingTypePipe } from './building-type.pipe';
 import { ConstructionTypePipe } from './construction-type.pipe';
 import { SplashDialogComponent } from './splash-dialog/splash-dialog.component';
 import { HelpDialogComponent } from './help-dialog/help-dialog.component';
+import { ExportButtonComponent } from './export-button/export-button.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { HelpDialogComponent } from './help-dialog/help-dialog.component';
     BuildingTypePipe,
     ConstructionTypePipe,
     SplashDialogComponent,
-    HelpDialogComponent
+    HelpDialogComponent,
+    ExportButtonComponent
   ],
   imports: [
     BrowserModule,

@@ -5,3 +5,7 @@ md-card {
 .total .mat-line{
     font-weight: bold;
 }
+
+app-export-button {
+  margin-left: auto;
+}
