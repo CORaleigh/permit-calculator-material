@@ -7,7 +7,7 @@ import { TiersService } from './tiers.service';
 @Injectable()
 export class CalculationService {
   valuation: number;
-  minFee: number = 106;
+  minFee: number = 108;
   tiersService:TiersService;
     constructor() { }
 

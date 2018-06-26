@@ -17,7 +17,7 @@ declare let ga: Function;
   providers: [TiersService, CalculationService]
 })
 
-export class CalculatorOutputComponent implements OnInit, Input, DoCheck {
+export class CalculatorOutputComponent implements OnInit, DoCheck {
   calculations: Calculations;
   cards: Array<DevelopmentCard>;
   cardindex: number;
@@ -38,10 +38,10 @@ export class CalculatorOutputComponent implements OnInit, Input, DoCheck {
     this.calculations = new Calculations();
     this.calculations.valuation = 0;
     this.calculations.building = new Fee("Building", 0, 0, 0.0026);
-    this.calculations.electrical = new Fee("Electrical", 0, 1.01, 0.67);
-    this.calculations.review = new Fee("Plan Review", 0, 0.55, 0.72);
-    this.calculations.plumbing = new Fee("Plumbing", 0, 0.55, 0.22);
-    this.calculations.mechanical = new Fee("Mechanical", 0, 0.78, 0.31); 
+    this.calculations.electrical = new Fee("Electrical", 0, 1.00, 0.67);
+    this.calculations.review = new Fee("Plan Review", 0, 0.51, 0.72);
+    this.calculations.plumbing = new Fee("Plumbing", 0, 0.56, 0.22);
+    this.calculations.mechanical = new Fee("Mechanical", 0, 0.77, 0.31); 
     this.getTiers();  
   }
 @HostListener('window:beforeunload', ['$event'])
